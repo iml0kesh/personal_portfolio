@@ -1,6 +1,105 @@
-
-
 body {
-    margin: 0px;
+  margin: 0px;
+  width: fit-content;
+  height: fit-content;
+  background-color: #1b191c;
 }
 
+.personalPort {
+}
+
+.Section01 {
+  display: flex;
+  border: 2px solid white;
+  justify-content: space-between;
+}
+
+.HiThere {
+  color: white;
+  font-size: 50px;
+  font-family: Outfit;
+  font-weight: 800;
+  word-wrap: break-word;
+  padding: 0.5rem;
+}
+
+.Name {
+  width: 395px;
+  height: 65px;
+  padding: 0.5rem;
+}
+
+.im {
+  color: #ead6d6;
+  font-size: 50px;
+  font-family: Outfit;
+  font-weight: 800;
+  word-wrap: break-word;
+}
+
+.lokeshmatta {
+  color: #d3667a;
+  font-size: 50px;
+  font-family: Outfit;
+  font-weight: 800;
+  text-decoration: underline;
+  word-wrap: break-word;
+}
+
+.myimage {
+  width: 360px;
+  height: 550px;
+  border-radius: 40px;
+  border-left: 7px #fff500 solid;
+  border-bottom: 7px #fff500 solid;
+}
+
+/* Resume Buttom */
+
+.resume {
+  width: 136px;
+  height: 52px;
+  padding: 0.5rem;
+}
+
+.resume-btn {
+  width: 136px;
+  height: 52px;
+  background: #d9d9d9;
+  border: 0px;
+  border-radius: 22px;
+  color: #393333;
+  font-size: 20px;
+  font-family: Outfit;
+  font-weight: 800;
+  word-wrap: break-word;
+}
+
+/* About Page */
+
+.about-section {
+  margin-top: 1rem;
+  border: 2px solid white;
+  position: relative;
+}
+
+.about-heading {
+  color: white;
+  font-size: 36px;
+  font-family: Outfit;
+  font-weight: 800;
+  word-wrap: break-word;
+  /* position:absolute; */
+  text-align: center;
+}
+
+.aboutme {
+  width: 761px;
+  color: white;
+  font-size: 20px;
+  font-family: Outfit;
+  font-weight: 300;
+  line-height: 32.3px;
+  letter-spacing: 0.5px;
+  word-wrap: break-word;
+}
