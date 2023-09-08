@@ -1,32 +1,49 @@
 body {
   margin: 0px;
-  width: fit-content;
-  height: fit-content;
   background-color: #1b191c;
 }
 
+
+
 .personalPort {
+  width: 100%;
+  /* height: calc() */
+  /* background-color: #1b191c; */
 }
 
 .Section01 {
   display: flex;
-  border: 2px solid white;
-  justify-content: space-between;
+  /* border: 5px solid red; */
+  justify-content: space-evenly;
+  position: relative;
+  width: 100vmax;
+  height: 100vh;
+}
+
+.left {
+  /* border: 2px solid white; */
+  margin: 2vw;
+  padding: 5vw 5vw;
+  /* overflow: ; */
+}
+
+.right {
+  /* border: 2px solid white; */
+  margin: 2vw;
+  padding: 5vw 5vw;
 }
 
 .HiThere {
   color: white;
-  font-size: 50px;
+  font-size: 4rem;
   font-family: Outfit;
   font-weight: 800;
   word-wrap: break-word;
-  padding: 0.5rem;
 }
 
 .Name {
-  width: 395px;
-  height: 65px;
-  padding: 0.5rem;
+  width: 100%;
+  /* height: 100%; */
 }
 
 .im {
@@ -42,14 +59,15 @@ body {
   font-size: 50px;
   font-family: Outfit;
   font-weight: 800;
-  text-decoration: underline;
+  /* text-decoration: underline; */
   word-wrap: break-word;
 }
 
 .myimage {
-  width: 360px;
-  height: 550px;
+  width: 100%;
+  height: 100%;
   border-radius: 40px;
+  text-align: center;
   border-left: 7px #fff500 solid;
   border-bottom: 7px #fff500 solid;
 }
@@ -57,9 +75,9 @@ body {
 /* Resume Buttom */
 
 .resume {
-  width: 136px;
-  height: 52px;
-  padding: 0.5rem;
+  /* border: 1px solid white; */
+  width: 100%;
+  /* display: flex; */
 }
 
 .resume-btn {
@@ -71,35 +89,127 @@ body {
   color: #393333;
   font-size: 20px;
   font-family: Outfit;
-  font-weight: 800;
+  font-weight: 400;
   word-wrap: break-word;
+}
+
+.resume-btn:hover {
+  cursor: pointer;
+}
+
+.resume-down {
+  /* border: 1px solid black; */
+  width: 13px;
+  height: 13px;
+  margin-top: 2px;
+}
+
+@media (max-width: 600px){
+  .Section01 {
+    width: 100vw;
+    height: 100%;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+  }
+
+  .left {
+    overflow: hidden;
+  }
+
+  .right {
+    overflow: hidden;
+  }
+
+  .HiThere {
+    font-size: calc(100vw - 90vw);
+  }
+
+  .im {
+    width: calc(100vw - 20%);
+    height: calc(100vh - 20%);
+    font-size: calc(100vw - 92vw);
+    text-align: center;
+  }
+  .lokeshmatta {
+    width: calc(100vw - 20%);
+    height: calc(100vh - 20%);
+    font-size: calc(100vw - 92vw);
+  }
+  .myimage {
+    width: calc(100vw - 19%);
+    height: calc(100vh - 50%);
+    border-left: none;
+    border-bottom: none;
+  }
+
+  .resume-btn {
+    width: 120px;
+    height: 40px;
+    margin: 10px;
+    font-size: 16px;
+  }
+
+  .resume-down {
+    /* border: 1px solid black; */
+    width: 10px;
+    height: 10px;
+  }
 }
 
 /* About Page */
 
 .about-section {
-  margin-top: 1rem;
-  border: 2px solid white;
-  position: relative;
+  /* border: 1px solid white; */
+  text-align: center;
+  width: 50%;
+  /* justify-content: center; */
+  display: flex;
+  flex-direction: column;
+  margin: 5% 5% 25% 25%;
 }
 
 .about-heading {
+  /* border: 1px solid white; */
+  width: 100%;
   color: white;
   font-size: 36px;
   font-family: Outfit;
   font-weight: 800;
   word-wrap: break-word;
-  /* position:absolute; */
-  text-align: center;
+}
+
+.sub-heading {
+  width: 100%;
+  color: white;
+  font-size: 26px;
+  font-family: Outfit;
+  font-weight: 250;
+  word-wrap: break-word;
+}
+
+.text {
+  width: 100%;
+  /* border: 1px solid white; */
+  overflow: hidden;
 }
 
 .aboutme {
-  width: 761px;
+  width: 100%;
   color: white;
-  font-size: 20px;
+  font-size: 15px;
   font-family: Outfit;
   font-weight: 300;
   line-height: 32.3px;
   letter-spacing: 0.5px;
-  word-wrap: break-word;
+  /* word-wrap: break-word; */
 }
+
+@media (max-width: 600px) {
+  .about-section {
+    margin: 10%;
+    width: calc(100vw - 20%);
+  }
+}
+
+
