@@ -1,8 +1,8 @@
 body {
-  margin: 0px;
+  margin: 0;
   background-color: #1b191c;
+  overflow-x: hidden;
 }
-
 
 
 .personalPort {
@@ -52,6 +52,10 @@ body {
   font-family: Outfit;
   font-weight: 800;
   word-wrap: break-word;
+  img {
+  max-width: 100%;
+  height: auto;
+}
 }
 
 .lokeshmatta {
@@ -64,7 +68,7 @@ body {
 }
 
 .myimage {
-  width: 100%;
+  max-width: 100%;
   height: 100%;
   border-radius: 40px;
   text-align: center;
@@ -104,7 +108,7 @@ body {
   margin-top: 2px;
 }
 
-@media (max-width: 600px){
+@media (max-width: 600px) {
   .Section01 {
     width: 100vw;
     height: 100%;
@@ -197,7 +201,7 @@ body {
 .aboutme {
   width: 100%;
   color: white;
-  font-size: 15px;
+  font-size: 18px;
   font-family: Outfit;
   font-weight: 300;
   line-height: 32.3px;
@@ -211,5 +215,3 @@ body {
     width: calc(100vw - 20%);
   }
 }
-
-
