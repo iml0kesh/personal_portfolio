@@ -8,7 +8,7 @@ html {
   overflow: scroll;
   overflow-x: hidden;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin: 5% 15% 8% 15%;
+  margin: calc(100% - 98%) calc(100% - 92%) calc(100% - 85%) calc(100% - 92%);
 }
 ::-webkit-scrollbar {
   width: 0; /* Remove scrollbar space */
@@ -23,48 +23,42 @@ body {
   margin: 0;
   background-color: #040d12;
   overflow-x: hidden;
-  font-family: "Hind Madurai", "Inter", "Noto Sans SC";
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-/* .personalPort {
-  width: 100%;
-} */
+.hide {
+  display: none;
+}
 
-.Section01 {
-  /* border: 1px solid blue; */
+.imp {
+  border: 1px solid red;
+  background-color: white;
+  margin: 25%;
+  text-align: center;
+}
+.imp button {
+  border: none;
+  font-size: 16px;
+  color: black;
+  background-color: wheat;
+  padding: 10px;
+}
+
+.personalPort {
+  /* width: 100%; */
+  border: 1px solid red;
+}
+
+.head1 {
+  /* border: 1px solid red; */
+  background-color: #e0e1dd;
   display: flex;
-  /* margin: 8% 15% 8% 15%; */
   justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  gap: 20px;
-  /* height: 100vh; */
+
+  border-radius: 20px;
 }
 
-.img {
-  object-fit: cover;
-  /* border: 1px solid white; */
-  height: 250px;
-  width: 250px;
-  border-radius: 50%;
-}
-
-.name {
-  color: white;
-  font-size: 20px;
-  font-weight: 500;
-  margin: 0px;
-  /* border: 1px solid red; */
-}
-
-.gsap {
-  margin: 10px;
-  color: white;
-  font-size: 18px;
-  /* border: 1px solid red; */
-}
-
-.socials ul {
+.list ul {
   direction: row;
   border-radius: 10px;
   /* border: 1px solid red; */
@@ -72,15 +66,94 @@ body {
   /* background-color: rgb(251, 251, 251); */
   justify-content: space-around;
 }
-.socials ul li {
+.list ul li {
   padding: 10px;
   display: inline;
   list-style: none;
 }
 
-.socials ul li img {
-  height: 25px;
-  width: 25px;
+.resume {
+  color: black;
+  text-decoration: none;
+  background-color: white;
+  padding: 10px 7px;
+  border-radius: 10px;
+}
+
+/* Section 1 */
+
+.Section01 {
+  border: 1px solid blue;
+  margin-top: calc(100% - 95%);
+}
+
+.upper-flex {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  padding: calc(100% - 97%);
+}
+
+.left {
+  border: 1px solid yellow;
+  /* height: ; */
+}
+
+.left h1 {
+  color: white;
+  font-size: calc(100% + 5rem);
+  margin: 0px;
+}
+
+.mid {
+  font-size: calc(100% - 50%);
+}
+
+.right {
+  border: 1px solid yellow;
+}
+
+.img {
+  border: 1px solid white;
+  object-fit: cover;
+  height: auto;
+  width: 400px;
+  border-radius: 5%;
+  margin: 10px;
+}
+
+.name {
+  border: 1px solid red;
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+  margin: 10px;
+  text-align: center;
+}
+
+/* .top {
+  border: 1px solid red;
+} */
+
+.info {
+  color: white;
+  margin: 0px;
+  font-size: calc(100% + 5rem);
+}
+
+#out {
+  border: 1px solid red;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+#text-area {
+  border: 1px solid red;
+  /* justify-content: center; */
+  /* margin: 10px; */
+  color: white;
+  width: 80%;
+  text-align: center;
+  height: 100%;
 }
 
 .Section01 button {
@@ -107,6 +180,7 @@ body {
 .v-num {
   font-size: 20px;
 }
+
 /* About Page */
 
 .section {
