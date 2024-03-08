@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap");
+
 html {
   overflow: scroll;
   overflow-x: hidden;
@@ -15,27 +21,29 @@ html {
 
 body {
   margin: 0;
-  background-color: #1b191c;
+  background-color: #040d12;
   overflow-x: hidden;
+  font-family: "Hind Madurai", "Inter", "Noto Sans SC";
 }
 
-.personalPort {
+/* .personalPort {
   width: 100%;
-}
+} */
 
 .Section01 {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   display: flex;
   /* margin: 8% 15% 8% 15%; */
   justify-content: space-between;
-  padding: 3%;
   align-items: center;
   flex-direction: column;
+  gap: 20px;
+  /* height: 100vh; */
 }
 
 .img {
   object-fit: cover;
-  border: 1px solid white;
+  /* border: 1px solid white; */
   height: 250px;
   width: 250px;
   border-radius: 50%;
@@ -45,21 +53,23 @@ body {
   color: white;
   font-size: 20px;
   font-weight: 500;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin: 15px;
+  margin: 0px;
+  /* border: 1px solid red; */
 }
 
 .gsap {
   margin: 10px;
   color: white;
   font-size: 18px;
+  /* border: 1px solid red; */
 }
 
 .socials ul {
   direction: row;
   border-radius: 10px;
+  /* border: 1px solid red; */
   padding: 5px;
-  background-color: white;
+  /* background-color: rgb(251, 251, 251); */
   justify-content: space-around;
 }
 .socials ul li {
@@ -68,22 +78,54 @@ body {
   list-style: none;
 }
 
-/* About Page */
-
-.about-section {
-  border: 1px solid red;
-  text-align: center;
-  padding: 0% 10% 0% 10%;
+.socials ul li img {
+  height: 25px;
+  width: 25px;
 }
 
-.about-heading {
-  border: 1px solid white;
+.Section01 button {
+  color: black;
+  font-size: 18px;
+  border: none;
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.Section01 button:hover {
+  cursor: pointer;
+}
+
+.v-count {
+  color: white;
+  background-color: red;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.v-num {
+  font-size: 20px;
+}
+/* About Page */
+
+.section {
+  /* border: 1px solid red; */
+  /* display: flex; */
+  text-align: center;
+  padding: 0% 10% 0% 10%;
+  /* align-items: center; */
+  justify-content: space-between;
+}
+
+.section-heading {
+  /* border: 1px solid white; */
   width: 100%;
   color: white;
   font-size: 36px;
   font-family: Outfit;
   font-weight: 800;
-  word-wrap: break-word;
+  /* word-wrap: break-word; */
 }
 
 .sub-heading {
@@ -92,13 +134,18 @@ body {
   font-size: 26px;
   font-family: Outfit;
   font-weight: 250;
-  border: 1px saddlebrown solid;
+  /* border: 1px saddlebrown solid; */
   /* word-wrap: break-word; */
 }
 
+.abtme-container {
+  background-color: #353d4f;
+  border-radius: 5px;
+  padding: 1% 2%;
+}
 .aboutme {
-  border: 1px saddlebrown solid;
   width: 100%;
+  /* border: 1px saddlebrown solid; */
   color: white;
   font-size: 18px;
   font-family: Outfit;
@@ -107,12 +154,116 @@ body {
   letter-spacing: 0.5px;
   text-align: justify;
   word-wrap: normal;
-  background-color: #000000e7;
+  margin: 0%;
+  /* background-color: #000000e7; */
 }
 
 @media (max-width: 600px) {
   .about-section {
-    margin: 10%;
+    /* margin: 10%; */
     width: calc(100vw - 20%);
+  }
+}
+
+/* Education */
+
+.edu-container {
+  background-color: #1c1b1b;
+  border-radius: 5px;
+  padding: 5px;
+  /* border: 1px solid bisque; */
+}
+
+.educard {
+  font-family: poppins;
+  /* border: 1px solid blueviolet; */
+  text-align: left;
+  color: white;
+  margin: 2%;
+  display: flex;
+  justify-content: space-around;
+  padding: 0% 20%;
+}
+
+.left-edu {
+  /* border: 1px solid blanchedalmond; */
+}
+
+.left-edu img {
+  border-radius: 50%;
+  height: auto;
+  width: calc(100% - 20%);
+}
+
+.right-edu {
+  /* border: 1px solid blanchedalmond; */
+}
+
+.educard p {
+  margin: 0px 0px 10px;
+}
+
+.date {
+  font-size: 14px;
+  opacity: 50%;
+}
+
+.clg-title {
+  font-size: 20px;
+}
+
+.clg-info {
+  font-size: 16px;
+}
+
+/* Projects */
+.pro-container {
+  display: flex;
+  /* flex-direction: column; */
+  /* border: 1px solid white; */
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.pro-card {
+  /* border: 1px solid yellow; */
+  background-color: #211f2d;
+  border-radius: 10px;
+  padding: 16px;
+  width: calc(50% - 20px);
+  box-sizing: border-box;
+  flex-grow: 1;
+  max-width: calc(50% - 20px);
+}
+
+.pro-title {
+  color: white;
+  /* border: 1px solid green; */
+  font-size: 18px;
+  text-align: left;
+}
+
+.pro-info {
+  /* border: 1px solid bisque; */
+  text-align: justify;
+  font-size: 16px;
+  color: white;
+  /* background-color: white; */
+}
+
+.pro-card button {
+  font-size: 16px;
+  color: black;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  /* text-align: right; */
+}
+
+@media (max-width: 768px) {
+  .pro-card {
+    width: 100%;
+    max-width: none;
   }
 }
