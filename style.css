@@ -46,7 +46,7 @@ body {
 
 .personalPort {
   /* width: 100%; */
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .head1 {
@@ -62,14 +62,25 @@ body {
   direction: row;
   border-radius: 10px;
   /* border: 1px solid red; */
-  padding: 5px;
-  /* background-color: rgb(251, 251, 251); */
-  justify-content: space-around;
 }
 .list ul li {
-  padding: 10px;
+  padding: 10px 15px;
   display: inline;
   list-style: none;
+  /* border: 1px solid red; */
+  margin: 0px;
+}
+.list ul li a {
+  text-decoration: none;
+  color: black;
+  /* border: 1px solid red; */
+}
+
+.list ul li:hover {
+  /* background-color: black; */
+  color: white;
+  border-radius: 5px;
+  padding: 10px 15px;
 }
 
 .resume {
@@ -85,11 +96,8 @@ body {
 .Section01 {
   border: 1px solid blue;
   margin-top: calc(100% - 95%);
-}
-
-.upper-flex {
-  border: 1px solid red;
-  display: flex;
+  /* display: flex; */
+  text-align: center;
   justify-content: space-between;
   padding: calc(100% - 97%);
 }
@@ -101,10 +109,19 @@ body {
 
 .left h1 {
   color: white;
-  font-size: calc(100% + 5rem);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: calc(100% + 1rem);
   margin: 0px;
+  color: #d4375c;
 }
 
+.left h2 {
+  color: white;
+  font-size: calc(100% + 5rem);
+
+  margin: 5px;
+}
 .mid {
   font-size: calc(100% - 50%);
 }
@@ -116,9 +133,9 @@ body {
 .img {
   border: 1px solid white;
   object-fit: cover;
-  height: auto;
-  width: 400px;
-  border-radius: 5%;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
   margin: 10px;
 }
 
