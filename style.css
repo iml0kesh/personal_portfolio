@@ -95,7 +95,7 @@ body {
 
 .Section01 {
   border: 1px solid blue;
-  margin-top: calc(100% - 95%);
+  margin-top: calc(100% - 98%);
   /* display: flex; */
   text-align: center;
   justify-content: space-between;
@@ -262,7 +262,9 @@ body {
   background-color: #1c1b1b;
   border-radius: 5px;
   padding: 5px;
-  /* border: 1px solid bisque; */
+  display: flex;
+  flex-direction: column; /* Stack children in a column */
+  align-items: center;
 }
 
 .educard {
@@ -272,8 +274,6 @@ body {
   color: white;
   margin: 2%;
   display: flex;
-  justify-content: space-around;
-  padding: 0% 20%;
 }
 
 .left-edu {
@@ -284,6 +284,7 @@ body {
   border-radius: 50%;
   height: auto;
   width: calc(100% - 20%);
+  /* border: 1px solid blanchedalmond; */
 }
 
 .right-edu {
@@ -292,6 +293,7 @@ body {
 
 .educard p {
   margin: 0px 0px 10px;
+  /* border: 1px solid blanchedalmond; */
 }
 
 .date {
