@@ -31,7 +31,7 @@ body {
 }
 
 .imp {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   background-color: white;
   margin: 25%;
   text-align: center;
@@ -94,7 +94,7 @@ body {
 /* Section 1 */
 
 .Section01 {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   margin-top: calc(100% - 98%);
   /* display: flex; */
   text-align: center;
@@ -103,7 +103,7 @@ body {
 }
 
 .left {
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
   /* height: ; */
 }
 
@@ -127,11 +127,11 @@ body {
 }
 
 .right {
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
 }
 
 .img {
-  border: 1px solid white;
+  /* border: 1px solid white; */
   object-fit: cover;
   height: 250px;
   width: 250px;
