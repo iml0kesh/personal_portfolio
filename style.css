@@ -21,9 +21,8 @@ html {
 
 body {
   margin: 0;
-  background-color: #040d12;
+  background-color: #000000;
   overflow-x: hidden;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .hide {
@@ -31,7 +30,7 @@ body {
 }
 
 .imp {
-  /* border: 1px solid red; */
+  border: 1px solid red;
   background-color: white;
   margin: 25%;
   text-align: center;
@@ -50,7 +49,7 @@ body {
 }
 
 .head1 {
-  /* border: 1px solid red; */
+  border: 1px solid red;
   background-color: #e0e1dd;
   display: flex;
   justify-content: space-between;
@@ -140,7 +139,7 @@ body {
 }
 
 .name {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   color: white;
   font-size: 30px;
   font-weight: 500;
@@ -151,27 +150,6 @@ body {
 /* .top {
   border: 1px solid red;
 } */
-
-.info {
-  color: white;
-  margin: 0px;
-  font-size: calc(100% + 5rem);
-}
-
-#out {
-  border: 1px solid red;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-}
-
-#text-area {
-  border: 1px solid red;
-  /* justify-content: center; */
-  /* margin: 10px; */
-  color: white;
-  width: 80%;
-  text-align: center;
-  height: 100%;
-}
 
 .Section01 button {
   color: black;
@@ -188,7 +166,7 @@ body {
 
 .v-count {
   color: white;
-  background-color: red;
+  /* background-color: red; */
   padding: 10px;
   border-radius: 5px;
   font-size: 16px;
@@ -230,10 +208,12 @@ body {
 }
 
 .abtme-container {
-  background-color: #353d4f;
+  background-color: #1a1b1b;
   border-radius: 5px;
   padding: 1% 2%;
+  margin: 0% 0% 5% 0%;
 }
+
 .aboutme {
   width: 100%;
   /* border: 1px saddlebrown solid; */
@@ -259,36 +239,27 @@ body {
 /* Education */
 
 .edu-container {
-  background-color: #1c1b1b;
+  /* background-color: #1a1b1b; */
   border-radius: 5px;
-  padding: 5px;
+  /* padding: 5px; */
+  /* border: 1px solid blueviolet; */
+
   display: flex;
-  flex-direction: column; /* Stack children in a column */
-  align-items: center;
+  justify-content: space-around;
 }
 
 .educard {
-  font-family: poppins;
+  /* font-family: poppins; */
   /* border: 1px solid blueviolet; */
+  padding: 1%;
+  background-color: #1a1b1b;
+  border-radius: 5px;
+  width: 30%;
   text-align: left;
   color: white;
-  margin: 2%;
+  /* margin: 2%; */
   display: flex;
-}
-
-.left-edu {
-  /* border: 1px solid blanchedalmond; */
-}
-
-.left-edu img {
-  border-radius: 50%;
-  height: auto;
-  width: calc(100% - 20%);
-  /* border: 1px solid blanchedalmond; */
-}
-
-.right-edu {
-  /* border: 1px solid blanchedalmond; */
+  flex-direction: column;
 }
 
 .educard p {
@@ -297,8 +268,9 @@ body {
 }
 
 .date {
-  font-size: 14px;
-  opacity: 50%;
+  font-weight: 900;
+  font-size: 26px;
+  color: #ffbd39;
 }
 
 .clg-title {
@@ -308,7 +280,6 @@ body {
 .clg-info {
   font-size: 16px;
 }
-
 /* Projects */
 .pro-container {
   display: flex;
