@@ -14,8 +14,14 @@
       rel="stylesheet"
     />
 
+    <!-- Flickety -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+    />
+
     <!-- StyleSheet -->
-    <link rel="StyleSheet" href="./style.css" />
+    <link rel="stylesheet" href="./style.css" />
 
     <!-- orientation Lock -->
     <style>
@@ -81,8 +87,8 @@
             sixth grade, I had my first encounter with a computer, and it marked
             the beginning of my aspiration to pursue a career in the field of
             computing. Subsequently, I am pursuing a B.Tech degree in Computer
-            Science and Engineering (CSE) have immersed myself in the world of
-            programming. <br /><br />
+            Science and Engineering (CSE) and have immersed myself in the world
+            of programming. <br /><br />
             I've dedicated countless days and nights to mastering Data
             Structures and Algorithms (DSA) concepts, though I believe
             continuous practice is essential for improvement. <br /><br />
@@ -102,11 +108,9 @@
         <h2 class="section-heading">Education</h2>
         <div class="edu-container">
           <div class="educard">
-            <!-- <div class="right-edu"> -->
             <p class="date">2020 - 2024</p>
             <p class="clg-title">KL UNIVERSITY</p>
             <p class="clg-info">B Tech In Computer Science and Engineering</p>
-            <!-- </div> -->
           </div>
 
           <div class="educard" id="step02">
@@ -140,7 +144,6 @@
           </div>
           <div class="box-card">
             <img src="images/Projects/p.png" alt="" />
-
             <p class="pro-title">Paint The Card</p>
             <p class="pro-info">
               Created a web-based game with HTML, CSS, and JavaScript. The user
@@ -156,75 +159,23 @@
 
       <div class="section">
         <h2 class="section-heading">Certifications</h2>
-        <div class="slider">
-          <a href="#slide-1">1</a>
-          <a href="#slide-2">2</a>
-          <a href="#slide-3">3</a>
-          <a href="#slide-4">4</a>
-          <a href="#slide-5">5</a>
-
-          <div class="slides">
-            <div id="slide-1">
-              <div class="box-card">
-                <img src="images/Certificates/AWSCP.png" alt="" />
-                <p class="pro-title">Share Your Notes</p>
-                <p class="pro-info">
-                  Developed a full-stack web application using the MERN stack.
-                  Users can view, create, modify, and remove notes. To ensure
-                  secure access, we included user authentication and
-                  authorization mechanisms. MongoDB was used for database
-                  storage, with Express JS serving as the backend API. created
-                  the frontend using React.
-                </p>
-                <button>Github</button>
-              </div>
+        <div class="cert-container">
+          <div class="cert-left">
+            <p class="cert-title">AWS Certified Cloud Practitioner</p>
+            <p class="cert-info">
+              Developed a full-stack web application using the MERN stack. Users
+              can view, create, modify, and remove notes. To ensure secure
+              access, we included user authentication and authorization
+              mechanisms. MongoDB was used for database storage, with Express JS
+              serving as the backend API. created the frontend using React.
+            </p>
+            <div class="cert-nav">
+              <button id="prevC">Prev</button>
+              <button id="nextC">Next</button>
             </div>
-            <div id="slide-2">
-              <div class="box-card">
-                <img src="images/Certificates/AWSSAA.png" alt="" />
-                <p class="pro-title">Share Your Notes</p>
-                <p class="pro-info">
-                  Developed a full-stack web application using the MERN stack.
-                  Users can view, create, modify, and remove notes. To ensure
-                  secure access, we included user authentication and
-                  authorization mechanisms. MongoDB was used for database
-                  storage, with Express JS serving as the backend API. created
-                  the frontend using React.
-                </p>
-                <button>Github</button>
-              </div>
-            </div>
-            <div id="slide-3">
-              <div class="box-card">
-                <img src="images/Certificates/EPAM.png" alt="" />
-                <p class="pro-title">Share Your Notes</p>
-                <p class="pro-info">
-                  Developed a full-stack web application using the MERN stack.
-                  Users can view, create, modify, and remove notes. To ensure
-                  secure access, we included user authentication and
-                  authorization mechanisms. MongoDB was used for database
-                  storage, with Express JS serving as the backend API. created
-                  the frontend using React.
-                </p>
-                <button>Github</button>
-              </div>
-            </div>
-            <div id="slide-4">
-              <div class="box-card">
-                <img src="images/Certificates/Redhat.png" alt="" />
-                <p class="pro-title">Share Your Notes</p>
-                <p class="pro-info">
-                  Developed a full-stack web application using the MERN stack.
-                  Users can view, create, modify, and remove notes. To ensure
-                  secure access, we included user authentication and
-                  authorization mechanisms. MongoDB was used for database
-                  storage, with Express JS serving as the backend API. created
-                  the frontend using React.
-                </p>
-                <button>Github</button>
-              </div>
-            </div>
-            <div id="slide-5"></div>
+          </div>
+          <div class="cert-right">
+            <img src="images/Certificates/AWSCP.png" alt="" id="cert-img" />
           </div>
         </div>
       </div>
@@ -250,5 +201,7 @@
         // loop: true,
       });
     </script>
+
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   </body>
 </html>

@@ -179,7 +179,7 @@ body {
 /* About Page */
 
 .section {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   /* display: flex; */
   text-align: center;
   padding: 0% 10% 0% 10%;
@@ -337,82 +337,60 @@ body {
 }
 
 /* Certifications */
-
 .cert-container {
+  background-color: #1a1b1b;
+  border-radius: 5px;
+
   display: flex;
-  position: relative;
-  border: 1px solid red;
-  gap: 20px;
+  padding: 20px;
+  /* border: 1px solid white; */
 }
 
-.cert-slider {
-  border: 1px solid white;
-  padding: 50px;
-}
-
-/* Slider */
-
-.slider {
+.cert-left {
   width: 100%;
-  text-align: center;
-  overflow: hidden;
-}
-
-.slides {
-  display: flex;
-
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-
-  scroll-snap-points-x: repeat(300px);
-  scroll-snap-type: mandatory;
-}
-.slides::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-.slides::-webkit-scrollbar-thumb {
-  background: black;
-  border-radius: 10px;
-}
-.slides::-webkit-scrollbar-track {
-  background: transparent;
-}
-.slides > div {
-  scroll-snap-align: start;
-  flex-shrink: 0;
-  width: 100%;
-  height: 100%;
-  margin-right: 50px;
-  border-radius: 10px;
-  /* background: #eee; */
-  /* transform-origin: center center; */
-  /* transform: scale(1); */
-  /* transition: transform 0.5s; */
-  /* position: relative; */
-
-  display: flex;
-  justify-content: center;
-}
-
-.slider > a {
-  display: inline-flex;
-  width: 1.5rem;
-  height: 1.5rem;
-  background: white;
-  text-decoration: none;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  margin: 0 0 0.5rem 0;
+  /* border: 1px solid red; */
+  text-align: justify;
+  padding: 2%;
   position: relative;
 }
-.slider > a:active {
-  top: 1px;
+
+.cert-right {
+  /* border: 1px solid red; */
+  width: 70%;
+  padding: 2%;
 }
-.slider > a:focus {
-  background: #000;
+.cert-right img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  /* border: 1px solid white; */
+  outline: none;
+}
+
+.cert-title {
+  font-weight: 900;
+  font-size: 26px;
+  color: #ffbd39;
+}
+
+.cert-info {
+  color: white;
+}
+
+.cert-nav {
+  width: 100%;
+  /* border: 1px solid red; */
+  position: absolute;
+  bottom: 1.3rem;
+  left: 1.3rem;
+}
+
+.cert-nav button {
+  /* border: 1px solid red; */
+  border: none;
+  padding: 1% 2%;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  border-radius: 5px;
 }
