@@ -7,7 +7,6 @@
 html {
   overflow: scroll;
   overflow-x: hidden;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: calc(100% - 98%) calc(100% - 92%) calc(100% - 85%) calc(100% - 92%);
 }
 ::-webkit-scrollbar {
@@ -23,6 +22,7 @@ body {
   margin: 0;
   background-color: #000000;
   overflow-x: hidden;
+  font-family: "Hind Madurai", "Inter", "Noto Sans SC";
 }
 
 .hide {
@@ -44,50 +44,6 @@ body {
 }
 
 .personalPort {
-  /* width: 100%; */
-  /* border: 1px solid red; */
-}
-
-.head1 {
-  border: 1px solid red;
-  background-color: #e0e1dd;
-  display: flex;
-  justify-content: space-between;
-
-  border-radius: 20px;
-}
-
-.list ul {
-  direction: row;
-  border-radius: 10px;
-  /* border: 1px solid red; */
-}
-.list ul li {
-  padding: 10px 15px;
-  display: inline;
-  list-style: none;
-  /* border: 1px solid red; */
-  margin: 0px;
-}
-.list ul li a {
-  text-decoration: none;
-  color: black;
-  /* border: 1px solid red; */
-}
-
-.list ul li:hover {
-  /* background-color: black; */
-  color: white;
-  border-radius: 5px;
-  padding: 10px 15px;
-}
-
-.resume {
-  color: black;
-  text-decoration: none;
-  background-color: white;
-  padding: 10px 7px;
-  border-radius: 10px;
 }
 
 /* Section 1 */
@@ -108,8 +64,6 @@ body {
 
 .left h1 {
   color: white;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
   font-size: calc(100% + 1rem);
   margin: 0px;
   color: #d4375c;
@@ -118,11 +72,11 @@ body {
 .left h2 {
   color: white;
   font-size: calc(100% + 5rem);
-
   margin: 5px;
 }
-.mid {
-  font-size: calc(100% - 50%);
+
+.name {
+  font-family: "Lora", "Noto Sans SC";
 }
 
 .right {
@@ -192,17 +146,17 @@ body {
   width: 100%;
   color: white;
   font-size: 36px;
-  font-family: Outfit;
+  /* font-family: Outfit; */
+  font-family: "Lora", "Noto Sans SC";
   font-weight: 800;
   /* word-wrap: break-word; */
 }
 
 .sub-heading {
   width: 100%;
-  color: white;
+  color: #ffbd39;
+  font-weight: 900;
   font-size: 26px;
-  font-family: Outfit;
-  font-weight: 250;
   /* border: 1px saddlebrown solid; */
   /* word-wrap: break-word; */
 }
@@ -219,7 +173,6 @@ body {
   /* border: 1px saddlebrown solid; */
   color: white;
   font-size: 18px;
-  font-family: Outfit;
   font-weight: 300;
   line-height: 32.3px;
   letter-spacing: 0.5px;
@@ -291,7 +244,7 @@ body {
 }
 
 .box-card {
-  background-color: #211f2d;
+  background-color: #1a1b1b;
   border-radius: 10px;
   padding: 16px;
   width: calc(50% - 20px);

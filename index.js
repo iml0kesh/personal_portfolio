@@ -36,10 +36,14 @@ const nextCert = document.querySelector("#nextC");
 let num = 0;
 
 nextCert.addEventListener("click", () => {
-  num++;
-  certTitle.innerHTML = certs[num].title;
-  certInfo.innerHTML = certs[num].info;
-  certImg.src = certs[num].img;
+  if (num++ < certs.length) {
+    certTitle.innerHTML = certs[num].title;
+    certInfo.innerHTML = certs[num].info;
+    certImg.src = certs[num].img;
+  } else {
+    alert("You have reached my final Certificate");
+    num = 2;
+  }
 });
 
 prevCert.addEventListener("click", () => {
