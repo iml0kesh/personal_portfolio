@@ -9,6 +9,13 @@ html {
   overflow-x: hidden;
   margin: calc(100% - 98%) calc(100% - 92%) calc(100% - 85%) calc(100% - 92%);
 }
+
+@media screen and (max-width: 480px) {
+  html {
+    margin: 0;
+  }
+}
+
 ::-webkit-scrollbar {
   /* width: 0; Remove scrollbar space */
   /* background: transparent; Optional: just make scrollbar invisible */
@@ -52,7 +59,6 @@ body {
 .Section01 {
   /* border: 1px solid blue; */
   margin-top: calc(100% - 98%);
-  /* display: flex; */
   text-align: center;
   justify-content: space-between;
   padding: calc(100% - 97%);
@@ -102,10 +108,17 @@ body {
   text-align: center;
 }
 
-/* .top {
-  border: 1px solid red;
-} */
+@media screen and (max-width: 480px) {
+  .left h2 {
+    font-size: calc(100% + 1rem);
+    margin: 5px;
+  }
 
+  .img {
+    height: 180px;
+    width: 180px;
+  }
+}
 /* About Page */
 
 .section {
@@ -153,6 +166,18 @@ body {
 }
 
 @media (max-width: 600px) {
+  .section {
+    padding: 0% 5% 0% 5%;
+  }
+
+  .sub-heading {
+    font-size: 20px;
+  }
+
+  .aboutme {
+    font-size: 16px;
+  }
+
   .about-section {
     /* margin: 10%; */
     width: calc(100vw - 20%);
@@ -167,7 +192,7 @@ body {
 
 .sub-sec {
   display: flex;
-  /* border-left: 1px solid yellow; */
+  /* border: 1px solid yellow; */
   justify-content: space-between;
   padding: 0% calc(100% - 90%);
   align-items: center;
@@ -178,8 +203,8 @@ body {
 .sub-sec h1 {
   font-family: outfit;
   font-size: 26px;
-  color: #ccd5ae;
-  /* border: 1px solid red; */
+  color: #ffbd39;
+  font-weight: 500;
 }
 
 .sub-sec ul {
@@ -189,6 +214,8 @@ body {
 }
 
 .sub-sec img {
+  height: 120px;
+  width: 120px;
 }
 
 .sub-sec p {
@@ -197,10 +224,32 @@ body {
   font-family: outfit;
 }
 
+@media (max-width: 600px) {
+  .sub-sec {
+    padding: 0%;
+  }
+  .sub-sec h1 {
+    text-align: left;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .sub-sec li {
+    margin-left: 5px;
+  }
+  .sub-sec img {
+    height: 44px;
+    width: 44px;
+  }
+
+  .sub-sec p {
+    font-size: 14px;
+  }
+}
+
 /* Education */
 
 .edu-container {
-  /* background-color: #1a1b1b; */
   border-radius: 5px;
   /* padding: 5px; */
   /* border: 1px solid blueviolet; */
@@ -210,7 +259,6 @@ body {
 }
 
 .educard {
-  /* font-family: poppins; */
   /* border: 1px solid blueviolet; */
   padding: 1%;
   background-color: #1a1b1b;
@@ -258,13 +306,13 @@ body {
   width: calc(50% - 20px);
   box-sizing: border-box;
   flex-grow: 1;
-  max-width: calc(50% - 20px);
 }
 
 .pro-title {
-  color: white;
-  /* border: 1px solid green; */
-  font-size: 18px;
+  font-weight: 500;
+  font-size: 22px;
+  color: #ffbd39;
+  font-family: outfit;
 }
 
 .pro-info {
@@ -275,14 +323,22 @@ body {
   /* background-color: white; */
 }
 
-.box-card button {
-  font-size: 16px;
-  color: black;
-  background-color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  /* text-align: right; */
+.pro-footer {
+  /* border: 1px solid red; */
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: space-between;
+  font-size: 18px;
+}
+
+.pro-footer a {
+  text-decoration: none;
+  color: white;
+}
+
+.pro-footer p {
+  color: white;
+  margin: 0px;
 }
 
 .box-card img {
@@ -290,10 +346,15 @@ body {
   border-radius: 10px;
 }
 
-@media (max-width: 768px) {
-  .pro-card {
+@media (max-width: 600px) {
+  .pro-container {
+    flex-direction: column;
+  }
+  .box-card {
     width: 100%;
-    max-width: none;
+  }
+  .box-card img {
+    width: 100%;
   }
 }
 
@@ -354,4 +415,29 @@ body {
   color: black;
   cursor: pointer;
   border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+  .cert-container {
+    flex-direction: column-reverse;
+    padding: 10px;
+  }
+
+  .cert-left {
+    padding: 0;
+  }
+  .cert-right {
+    padding: 0;
+
+    width: 100%;
+  }
+  .cert-right img {
+    width: 100%;
+  }
+  .cert-right {
+    font-size: 2px;
+  }
+  .cert-nav {
+    position: static !important;
+  }
 }
