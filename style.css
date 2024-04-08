@@ -10,12 +10,12 @@ html {
   margin: calc(100% - 98%) calc(100% - 92%) calc(100% - 85%) calc(100% - 92%);
 }
 ::-webkit-scrollbar {
-  width: 0; /* Remove scrollbar space */
-  background: transparent; /* Optional: just make scrollbar invisible */
+  /* width: 0; Remove scrollbar space */
+  /* background: transparent; Optional: just make scrollbar invisible */
 }
 /* Optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
-  background: #ff0000;
+  /* background: #ff0000; */
 }
 
 body {
@@ -44,6 +44,7 @@ body {
 }
 
 .personalPort {
+  /* background-color: #383838; */
 }
 
 /* Section 1 */
@@ -105,51 +106,22 @@ body {
   border: 1px solid red;
 } */
 
-.Section01 button {
-  color: black;
-  font-size: 18px;
-  border: none;
-  background-color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-
-.Section01 button:hover {
-  cursor: pointer;
-}
-
-.v-count {
-  color: white;
-  /* background-color: red; */
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-.v-num {
-  font-size: 20px;
-}
-
 /* About Page */
 
 .section {
   /* border: 1px solid red; */
-  /* display: flex; */
   text-align: center;
   padding: 0% 10% 0% 10%;
-  /* align-items: center; */
-  justify-content: space-between;
 }
 
 .section-heading {
-  /* border: 1px solid white; */
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgb(77, 73, 73);
   width: 100%;
   color: white;
   font-size: 36px;
-  /* font-family: Outfit; */
   font-family: "Lora", "Noto Sans SC";
   font-weight: 800;
-  /* word-wrap: break-word; */
 }
 
 .sub-heading {
@@ -158,7 +130,6 @@ body {
   font-weight: 900;
   font-size: 26px;
   /* border: 1px saddlebrown solid; */
-  /* word-wrap: break-word; */
 }
 
 .abtme-container {
@@ -179,7 +150,6 @@ body {
   text-align: justify;
   word-wrap: normal;
   margin: 0%;
-  /* background-color: #000000e7; */
 }
 
 @media (max-width: 600px) {
@@ -187,6 +157,44 @@ body {
     /* margin: 10%; */
     width: calc(100vw - 20%);
   }
+}
+
+/* Skills */
+
+.skills-container {
+  /* border: 1px solid red; */
+}
+
+.sub-sec {
+  display: flex;
+  /* border-left: 1px solid yellow; */
+  justify-content: space-between;
+  padding: 0% calc(100% - 90%);
+  align-items: center;
+  /* border-radius: 24px; */
+  margin-bottom: 20px;
+}
+
+.sub-sec h1 {
+  font-family: outfit;
+  font-size: 26px;
+  color: #ccd5ae;
+  /* border: 1px solid red; */
+}
+
+.sub-sec ul {
+  display: flex;
+  list-style: none;
+  /* border: 1px solid green; */
+}
+
+.sub-sec img {
+}
+
+.sub-sec p {
+  margin: 0px;
+  color: white;
+  font-family: outfit;
 }
 
 /* Education */
