@@ -16,6 +16,15 @@ html {
   }
 }
 
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-in.active {
+  opacity: 1;
+}
+
 ::-webkit-scrollbar {
   /* width: 0; Remove scrollbar space */
   /* background: transparent; Optional: just make scrollbar invisible */
@@ -70,6 +79,8 @@ body {
 }
 
 .left h1 {
+  /* border: 1px solid yellow; */
+
   color: white;
   font-size: calc(100% + 1rem);
   margin: 0px;
@@ -77,13 +88,54 @@ body {
 }
 
 .left h2 {
+  /* border: 1px solid yellow; */
+
   color: white;
   font-size: calc(100% + 5rem);
-  margin: 5px;
+  margin: 0px;
 }
 
 .name {
   font-family: "Lora", "Noto Sans SC";
+}
+
+.socials-nav {
+  padding: 0px calc(100% - 89%);
+  display: flex;
+  align-items: center;
+  margin: 1% 2%;
+  justify-content: space-around;
+}
+
+.socials-nav p {
+  color: #ffbd39;
+  font-size: 24px;
+  margin: 0px;
+}
+
+.v-count {
+  border-radius: 6px;
+}
+
+.v-num {
+  color: green;
+  font-family: outfit;
+  font-weight: bolder;
+}
+
+.socials-nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0px;
+}
+
+.socials-nav li {
+  cursor: pointer;
+  height: 32px;
+}
+
+.socials-nav li:not(:last-child) {
+  margin-right: 20px;
 }
 
 .right {
@@ -396,6 +448,15 @@ body {
 }
 
 .cert-info {
+  color: white;
+}
+
+.cert-container h4 {
+  font-weight: 400;
+  color: white;
+}
+
+.key-learning-list {
   color: white;
 }
 
