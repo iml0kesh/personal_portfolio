@@ -1,26 +1,3 @@
-// Css Toogle
-const impDiv = document.querySelector("#imp");
-const btn = document.querySelector("#imp-btn");
-
-btn.addEventListener("click", () => {
-  impDiv.classList.add("hide");
-});
-
-let count = localStorage.getItem("visitCount") || 0;
-const Vcount = document.querySelector(".v-num");
-
-// Fade
-document.addEventListener("DOMContentLoaded", function () {
-  setTimeout(function () {
-    count++;
-    localStorage.setItem("visitCount", count);
-    document.querySelector(".fade-in").classList.add("active");
-    Vcount.innerHTML = count;
-  }, 100); // 100ms delay
-});
-
-// Certifications
-
 // Certifications
 
 const certs = [
@@ -95,3 +72,54 @@ prevCert.addEventListener("click", () => {
 });
 
 displayCert();
+
+// Visitor Count
+let countContainer = document.querySelector(".v-count");
+
+// Img
+const img = document.querySelector(".morpheus-img");
+
+// Pills
+
+const prof = document.querySelector(".professional-content");
+prof.classList.add("hidden");
+
+const pers = document.querySelector(".personal-content");
+pers.classList.add("hidden");
+
+function showContent(section) {
+  let target = null;
+
+  if (section === "professional") {
+    prof.classList.remove("hidden");
+    pers.classList.add("hidden");
+    target = prof;
+    img.src = "images/Assets/pillBlue.png";
+  } else if (section === "personal") {
+    pers.classList.remove("hidden");
+    prof.classList.add("hidden");
+    target = pers;
+    img.src = "images/Assets/pillRed.png";
+  }
+  if (target) {
+    target.scrollIntoView({ behavior: "smooth" });
+  }
+}
+
+// Image Hover change
+const profPill = document.querySelector("#pillBlue");
+const persPill = document.querySelector("#pillRed");
+
+profPill.addEventListener("mouseover", () => {
+  img.src = "images/Assets/pillBlue.png";
+});
+profPill.addEventListener("mouseout", () => {
+  img.src = "images/Assets/pill.png";
+});
+
+persPill.addEventListener("mouseover", () => {
+  img.src = "images/Assets/pillRed.png";
+});
+persPill.addEventListener("mouseout", () => {
+  img.src = "images/Assets/pill.png";
+});

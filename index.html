@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled" />
-    <title>iaml0kesh</title>
 
-    <!-- GoogleFonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="ScreenOrientation" content="autoRotate:disabled" />
+  <title>iaml0kesh</title>
 
-    <!-- StyleSheet -->
-    <link rel="stylesheet" href="./style.css" />
+  <!-- GoogleFonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
 
-    <!-- orientation Lock -->
-    <style>
+  <!-- StyleSheet -->
+  <link rel="stylesheet" href="./style.css" />
+
+  <!-- orientation Lock -->
+  <!-- <style>
       #lock {
         display: none;
       }
@@ -42,11 +41,11 @@
           display: block;
         }
       }
-    </style>
-  </head>
+    </style> -->
+</head>
 
-  <body class="fade-in">
-    <div class="imp" id="imp">
+<body class="fade-in">
+  <!-- <div class="imp" id="imp">
       <p>
         Hello, Thanks for the visit but The site is under development so it may
         take some time to fully functional.
@@ -56,53 +55,69 @@
 
     <div id="lock">
       <h1>please bro Rotate the Device</h1>
-    </div>
+    </div> -->
 
-    <div class="personalPort" id="container">
-      <div class="Section01">
-        <div class="right">
-          <img src="./images/IMG_6543.JPG" alt="" class="img" />
-        </div>
-        <div class="left">
-          <h1>Hello World.</h1>
-          <h2 class="name">I'm Lokesh Matta</h2>
-          <div class="socials-nav">
-            <p class="v-count">Visitor Count : <span class="v-num"></span></p>
-            <a href="/files/Lokesh_Matta_Resume.pdf" download="Resume"
-              >Resume</a
-            >
-            <ul>
-              <li>
-                <a href="https://www.linkedin.com/in/iaml0kesh/">
-                  <img
-                    src="images/logos/Linkedin.png"
-                    alt="Open Linkedin Profile"
-                  />
-                </a>
-              </li>
-              <li>
-                <a href="https://x.com/iaml0kesh">
-                  <img src="images/logos/x.png" alt="Open X Profile" />
-                </a>
-              </li>
-              <li>
-                <a href="https://www.instagram.com/iaml0kesh/">
-                  <img
-                    src="images/logos/instagram.png"
-                    alt="Open Instagram Profile"
-                  />
-                </a>
-              </li>
-            </ul>
-          </div>
+  <div class="personalPort" id="container">
+    <div class="Section01">
+      <div class="right">
+        <img src="./images/IMG_6543.JPG
+        " alt="" class="img" />
+      </div>
+      <div class="left">
+        <h1>Hello World</h1>
+        <h2 class="name">I'm Lokesh Matta</h2>
+        <div class="socials-nav">
+          <p class="v-count">Visitor Count : <span class="v-num">69</span></p>
+          <a href="/files/Lokesh_Matta_Resume.pdf" download="Resume">Resume 📜</a>
+          <ul>
+            <li>
+              <a href="https://www.linkedin.com/in/iaml0kesh/">
+                <img src="images/logos/Linkedin.png" alt="Open Linkedin Profile" />
+              </a>
+            </li>
+            <li>
+              <a href="https://x.com/iaml0kesh">
+                <img src="images/logos/x.png" alt="Open X Profile" />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/iaml0kesh/">
+                <img src="images/logos/instagram.png" alt="Open Instagram Profile" />
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
+    </div>
 
+    <div class="section">
+      <h1 class="section-heading">About Me</h1>
+
+      <div class="choice-container">
+        <img src="images/Assets/pill.png" alt="Morpheus with hands extended" class="morpheus-img" />
+
+        <!-- Buttons -->
+        <button id="pillBlue" class="pill-button professional" onclick="showContent('professional')">
+          Professional
+        </button>
+        <button id="pillRed" class="pill-button personal" onclick="showContent('personal')">
+          Personal
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Two Sectons Professinal and Personal -->
+
+    <div class="professional-content">
+      <h1 class="section-heading">Professinal ME 👨‍💻</h1>
       <div class="section">
-        <h1 class="section-heading">About Me</h1>
-        <div class="abtme-container">
+        <div class="professional-abtme-container">
+
+          <!--Professional About Me -->
+
           <h2 class="sub-heading">Design | Code | Debug</h2>
-          <p class="aboutme">
+          <p class="professional-aboutme">
             Hey, I'm Lokesh, and I'm from the Indian city of Vijayawada. In
             sixth grade, I had my first encounter with a computer, and it marked
             the beginning of my aspiration to pursue a career in the field of
@@ -250,47 +265,69 @@
       <!-- Education -->
 
       <!-- <div class="section">
-        <h2 class="section-heading">Education</h2>
-        <div class="edu-container">
-          <div class="educard">
-            <p class="date">2020 - 2024</p>
-            <p class="clg-title">KL UNIVERSITY</p>
-            <p class="clg-info">B Tech In Computer Science and Engineering</p>
-          </div>
-
-          <div class="educard" id="step02">
-            <p class="date">2018 - 2020</p>
-            <p class="clg-title">SRI CHAITANYA JUNIOR COLLEGE</p>
-            <p class="clg-info"></p>
-          </div>
-          <div class="educard" id="step01">
-            <p class="date">2017 - 2018</p>
-            <p class="clg-title">KENDRIYA VIDYALAYA</p>
-            <p class="clg-info"></p>
-          </div>
-        </div>
-      </div> -->
+            <h2 class="section-heading">Education</h2>
+            <div class="edu-container">
+              <div class="educard">
+                <p class="date">2020 - 2024</p>
+                <p class="clg-title">KL UNIVERSITY</p>
+                <p class="clg-info">B Tech In Computer Science and Engineering</p>
+              </div>
+    
+              <div class="educard" id="step02">
+                <p class="date">2018 - 2020</p>
+                <p class="clg-title">SRI CHAITANYA JUNIOR COLLEGE</p>
+                <p class="clg-info"></p>
+              </div>
+              <div class="educard" id="step01">
+                <p class="date">2017 - 2018</p>
+                <p class="clg-title">KENDRIYA VIDYALAYA</p>
+                <p class="clg-info"></p>
+              </div>
+            </div>
+          </div> -->
     </div>
 
-    <script src="index.js"></script>
+    <div class="personal-content">
+      <h1 class="section-heading" id="head-personal">Personal ME 😎</h1>
+      <div class="section">
+        <div class="professional-abtme-container">
 
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+          <!-- Personal About Me -->
+          <h2 class="sub-heading">Explore | Watch | Laugh</h2>
+          <p class="professional-aboutme">
+            When I'm not busy debugging code 👨‍💻, you’ll probably find me deep into a movie/Tv show session 🎞️, gaming session 🎮, or scrolling through memes 😂 that are way too
+            relatable.
+            <br><br>
+            I’m a huge fan of movies and TV shows — from epic sci-fi to emotional dramas, if it can make me laugh, cry,
+            or overthink my existence at 2 AM, I’m in 😤. Gaming is my escape room, stress buster, and sometimes, my reason
+            for forgetting what day it is. <br><br>
 
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+            Traveling and photography 📷 keep me grounded — literally and creatively. I love discovering new places, even
+            if it's just for the food or that one perfect sunset shot I’ll post a week later with a deep caption 😌. <br><br>
 
-    <script>
-      var typed = new Typed("#out", {
-        strings: [
-          "Web Development",
-          "Java Programming",
-          "React",
-          "Node JS",
-          "Express JS",
-          "MongoDB",
-        ],
-        typeSpeed: 100,
-        // loop: true,
-      });
-    </script>
-  </body>
+            Tech gadgets make me feel like a kid in a digital candy store. Memes? They're my daily dose of serotonin.
+            And music? If I had a rupee for every time a song fixed my mood, I could probably buy a concert ticket... or
+            at least better headphones. <br><br>
+
+            TL;DR: I code to pay the bills, but I vibe with life through pixels, playlists, and plot twists.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="">
+
+        </div>
+        <h1 class="section-heading">Movies</h1>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Personal Side -->
+
+  <script src="index.js"></script>
+</body>
+
 </html>
