@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Untitled</title>
+    <style>
+      img.emoji {
+        border-radius: 0;
+        float: none !important;
+        height: 1em;
+        width: 1em;
+        margin: 0 0.05em 0 0.1em;
+        vertical-align: -0.1em;
+      }
+
+      body {
+        padding: 48px;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+      }
+
+      .page-break {
+        margin: 2em 0;
+        border-bottom: 1px dashed #aaa;
+        border-top: 1px dashed #aaa;
+      }
+
+      .page-break:before {
+        color: #aaa;
+        content: "Page Break";
+        display: block;
+        text-align: center;
+      }
+    </style>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;600;700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 7.5px;
+      }
+
+      body {
+        color: #222;
+        font-family: "Hind Madurai", "Inter", "Noto Sans SC";
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1.2;
+        margin: auto;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Lora", "Noto Sans SC";
+        font-weight: bold;
+      }
+
+      h1 {
+        font-size: 3.6rem;
+        font-weight: normal;
+        margin-top: 0;
+        text-align: center;
+      }
+
+      h2 {
+        font-size: 2.4rem;
+        margin-top: 1em;
+      }
+
+      h3 {
+        font-size: 2rem;
+        margin-top: 0.5em;
+      }
+
+      h4,
+      h5,
+      h6 {
+        font-size: 1.8rem;
+        margin-top: 0.4em;
+      }
+
+      b,
+      strong {
+        font-weight: bold;
+      }
+
+      i,
+      em {
+        font-style: italic;
+      }
+
+      ul,
+      ol {
+        margin-top: 0.5em;
+        list-style-type: none;
+      }
+
+      ul li:before,
+      ol li:before {
+        content: "-";
+        font-weight: bold;
+        margin-right: 0.5em;
+      }
+
+      h3 + ul {
+        margin-top: 0;
+      }
+
+      a {
+        color: #2ecc71;
+        text-decoration: underline;
+      }
+
+      code {
+        background-color: rgba(46, 204, 113, 0.25);
+        font-family: inherit;
+      }
+
+      pre {
+        font-family: inherit;
+      }
+
+      pre code {
+        display: block;
+      }
+
+      p {
+        margin-top: 0.5em;
+      }
+
+      p.pull-right {
+        float: right;
+        margin-right: 4px;
+        margin-top: -1.2em;
+        text-align: right;
+      }
+
+      h3 + p {
+        margin-top: 0.2em;
+      }
+
+      li > p {
+        margin-top: 0;
+      }
+
+      table {
+        margin-top: 0.5em;
+        table-layout: fixed;
+        width: 100%;
+      }
+
+      table th,
+      table tr {
+        font-weight: normal;
+      }
+
+      table.no-margin {
+        margin: 0 !important;
+      }
+
+      hr {
+        border: none;
+        border-top: 1px solid #ddd;
+        margin: 1em 0;
+      }
+
+      img {
+        border-radius: 4px;
+        float: left;
+        height: 10rem;
+        margin-right: 2rem;
+      }
+
+      ::-moz-selection {
+        background-color: rgba(46, 204, 113, 0.2);
+      }
+
+      ::selection {
+        background-color: rgba(46, 204, 113, 0.2);
+      }
+
+      .row.row--section {
+        display: flex;
+      }
+
+      .row.row--section .column.column--1-1 {
+        flex: 100%;
+      }
+
+      .row.row--section .column.column--1-2 {
+        flex: 66%;
+        padding-right: 3rem;
+      }
+
+      .row.row--section .column.column--2-2 {
+        flex: 34%;
+        padding-left: 3rem;
+      }
+
+      body {
+        color: #444;
+      }
+
+      h1 {
+        color: #222;
+        font-weight: 600;
+        font-size: 4rem;
+      }
+
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #222;
+        font-weight: 500;
+      }
+
+      h2 {
+        position: relative;
+      }
+
+      h2:before {
+        background-color: #2ecc71;
+        bottom: -1px;
+        content: "";
+        height: 3px;
+        left: 0;
+        position: absolute;
+        width: 4rem;
+      }
+
+      h2 + * {
+        margin-top: 2rem;
+      }
+
+      h3 {
+        font-weight: normal;
+      }
+
+      b,
+      strong {
+        color: #222;
+        font-weight: 600;
+      }
+
+      h1 b,
+      h1 strong {
+        font-weight: 700;
+      }
+
+      h2 b,
+      h2 strong,
+      h3 b,
+      h3 strong,
+      h4 b,
+      h4 strong,
+      h5 b,
+      h5 strong,
+      h6 b,
+      h6 strong {
+        font-weight: 700;
+      }
+
+      a b,
+      a strong {
+        font-weight: 700;
+      }
+
+      ul {
+        padding-left: 12px;
+      }
+
+      ul li {
+        list-style-type: none;
+        position: relative;
+      }
+
+      ul li:before {
+        color: #2ecc71;
+        font-family: "Poppins";
+        content: ">";
+        left: -12px;
+        position: absolute;
+      }
+
+      a {
+        border-bottom: 1px solid #2ecc71;
+        color: #222;
+        text-decoration: none;
+      }
+
+      code {
+        background-color: rgba(46, 204, 113, 0.2);
+        color: #222;
+        font-weight: 500;
+        padding: 0 4px;
+      }
+
+      hr {
+        border-top: 1px solid #2ecc71;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      <strong>Lokesh Matta</strong>
+    </h1>
+    <h2>Objective</h2>
+    <p>
+      Cybersecurity enthusiast with strong fundamentals in system and
+      application security, supported by programming and development experience.
+      Eager to contribute to secure, scalable solutions while continuously
+      enhancing technical and security skills.
+    </p>
+    <h2>Education</h2>
+    <table class="no-margin">
+      <tbody>
+        <tr>
+          <td align="left">
+            <p>
+              <strong>KONERU LAKSHMAIAH EDUCATION FOUNDATION</strong>
+            </p>
+          </td>
+          <td align="right">
+            <p>2020 - 2024</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>BTech In Computer Science and Engineering <code>8.94 CGPA</code></p>
+    <table class="no-margin">
+      <tbody>
+        <tr>
+          <td align="left">
+            <p>
+              <strong>Sri Chaitanya Junior College</strong>
+            </p>
+          </td>
+          <td align="right">
+            <p>2018 - 2020</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Board Of Intermediate Education, AP , <code>74%</code></p>
+    <table class="no-margin">
+      <tbody>
+        <tr>
+          <td align="left">
+            <p>
+              <strong>Kendriya Vidyalaya</strong>
+            </p>
+          </td>
+          <td align="right">
+            <p>2017 - 2018</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Central Board of Secondary Education, <code>68%</code></p>
+    <h2>Trainings</h2>
+    <table class="no-margin">
+      <tbody>
+        <tr>
+          <td align="left">
+            <p>
+              <strong>Data Security Program – Great Learning</strong>
+            </p>
+          </td>
+          <td align="right">
+            <p>July 2025 - Aug 2025</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      Instructor-led training focused on
+      <strong
+        >cybersecurity fundamentals, network and application security,
+        cryptography, DevOps &amp; DevSecOps, and data protection</strong
+      >
+      . Hands-on exposure to Kali Linux, Windows Server, Docker, Kubernetes,
+      Python, PowerShell, Wireshark, Burp Suite, and Microsoft Purview.<br />
+    </p>
+    <h2>Technology &amp;Skills</h2>
+    <p>Programming Languages: <code>Java, python</code></p>
+    <p>Tools &amp;Libraries : <code>MySQL, Git, React, Docker</code></p>
+    <p>Cloud : <code>AWS, Azure</code></p>
+    <p>Soft Skills: <code>Communication, Teamwork, Time Management</code></p>
+    <h2>Certificates</h2>
+    <table class="no-margin">
+      <tbody>
+        <tr>
+          <td align="left">
+            <p>AWS Certified Solutions Architect – Associate</p>
+          </td>
+          <td align="right">
+            <p>
+              2022,
+              <a
+                href="https://www.credly.com/badges/473001dc-ab33-45db-9264-025352d0687e/public_url"
+                >view Certificate</a
+              >
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="no-margin">
+      <tbody>
+        <tr>
+          <td align="left">
+            <p>CyberOps Associate</p>
+          </td>
+          <td align="right">
+            <p>
+              2023,
+              <a
+                href="https://www.credly.com/badges/e0be9f99-7c14-493f-b22d-57aa8b3033c0/public_url"
+                >view Certificate</a
+              >
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="no-margin">
+      <tbody>
+        <tr>
+          <td align="left">
+            <p>EPAM Front-End Technologies</p>
+          </td>
+          <td align="right">
+            <p>
+              2023,
+              <a
+                href="https://certificates.epam.com/certificates/d08953e7-de2b-4f8c-bb52-bbcc89b725e2"
+                >view Certificate</a
+              >
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="no-margin">
+      <tbody>
+        <tr>
+          <td align="left">
+            <p>Wipro TalentNext on Java Full Stack</p>
+          </td>
+          <td align="right">
+            <p>
+              2023,
+              <a href="https://cert.diceid.com/csr/cid/XJaK7P"
+                >view Certificate</a
+              >
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Projects</h2>
+    <table class="no-margin">
+      <tbody>
+        <tr>
+          <td align="left">
+            <h3>
+              <a href="https://github.com/iml0kesh/shareyournotes"
+                >Share Your Notes</a
+              >
+            </h3>
+          </td>
+          <td align="right">
+            <p>
+              <em>2023</em>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      Developed a full-stack web application using the MERN stack. Users can
+      view, create, modify, and remove notes. To ensure secure access, we
+      included user authentication and authorization mechanisms. MongoDB was
+      used for database storage, with Express JS serving as the backend
+      API.&nbsp;created the frontend using React.
+    </p>
+    <table class="no-margin">
+      <tbody>
+        <tr>
+          <td align="left">
+            <h3>
+              <a href="https://github.com/iml0kesh/Paint_ColorSite"
+                >Paint The Card</a
+              >
+            </h3>
+          </td>
+          <td align="right">
+            <p>2022</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      Created a web-based game with HTML, CSS, and JavaScript. The user can
+      select a color from the available options and paint the cards as desired
+      and Implemented a feature that allows the cards to be colored randomly
+      with a single click. Pushed to Github and Deployed suing Github Pages.
+    </p>
+    <h2>Accomplishments</h2>
+    <p>
+      Achieved the rank of Flight Cadet (F/c) in the National Cadet Corps (NCC)
+      unit 8(A) AIR SQN NCC, demonstrating commitment to leadership, discipline,
+      and teamwork."
+    </p>
+    <p></p>
+    <hr />
+    <table class="no-margin">
+      <tbody>
+        <tr>
+          <td align="left">
+            <p>
+              Email:<strong></strong>
+              <a href="mailto:iamlokeshofficial@gmail.com">
+                <strong>iamlokeshofficial@gmail.com</strong>
+              </a>
+            </p>
+          </td>
+          <td align="center">
+            <p>Phone: <strong>+918500770776</strong></p>
+          </td>
+          <td align="right">
+            <p>
+              My Site:
+              <a href="https://iaml0kesh.netlify.app/">
+                <strong>https://iaml0kesh.netlify.app/</strong>
+              </a>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

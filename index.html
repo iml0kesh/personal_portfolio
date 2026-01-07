@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled" />
+    <title>iaml0kesh</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="ScreenOrientation" content="autoRotate:disabled" />
-  <title>iaml0kesh</title>
+    <!-- GoogleFonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- GoogleFonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800&display=swap"
-    rel="stylesheet" />
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="./style.css" />
 
-  <!-- StyleSheet -->
-  <link rel="stylesheet" href="./style.css" />
-
-  <!-- orientation Lock -->
-  <!-- <style>
+    <!-- orientation Lock -->
+    <!-- <style>
       #lock {
         display: none;
       }
@@ -42,229 +43,378 @@
         }
       }
     </style> -->
-</head>
+  </head>
 
-<body class="fade-in">
-  <!-- <div class="imp" id="imp">
-      <p>
-        Hello, Thanks for the visit but The site is under development so it may
-        take some time to fully functional.
-      </p>
-      <button id="imp-btn">Ok</button>
-    </div>
+  <body class="fade-in">
 
-    <div id="lock">
-      <h1>please bro Rotate the Device</h1>
+    <script>
+    (function(){
+      function update(){
+        const lock = document.getElementById('lock');
+        const container = document.getElementById('container');
+        if(!lock || !container) return;
+        const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+        lock.style.display = isPortrait ? 'none' : 'flex';
+        container.style.display = isPortrait ? 'block' : 'none';
+      }
+      window.addEventListener('orientationchange', update);
+      window.addEventListener('resize', update);
+      document.addEventListener('DOMContentLoaded', update);
+    })();
+    </script>
+
+    <style>
+      :root{
+        --fade-duration: 700ms;
+        --reveal-duration: 600ms;
+        --accent: #6c63ff;
+      }
+
+      /* Respect reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+      }
+
+      /* Page fade-in (body already has .fade-in) */
+      .fade-in {
+        animation: pageFade var(--fade-duration) ease-out both;
+      }
+      @keyframes pageFade {
+        from { opacity: 0; transform: translateY(6px); }
+        to   { opacity: 1; transform: none; }
+      }
+
+      /* Smooth native scrolling for anchor jumps */
+      html { scroll-behavior: smooth; }
+
+      /* Reveal-on-scroll */
+      .reveal {
+        opacity: 0;
+        transform: translateY(18px) scale(0.995);
+        transition: opacity var(--reveal-duration) ease-out, transform var(--reveal-duration) cubic-bezier(.2,.9,.2,1);
+        will-change: opacity, transform;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: none;
+      }
+
+      /* Subtle accent underline animation for headings/links */
+      .section-heading {
+        position: relative;
+        display: inline-block;
+      }
+      /* .section-heading::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        height: 3px;
+        width: 0%;
+        background: linear-gradient(90deg,var(--accent), #2ec4b6);
+        transition: width 380ms ease;
+        border-radius: 3px;
+      }
+      .section-heading:hover::after,
+      .section-heading:focus::after,
+      .section-heading:active::after{
+        width: 100%;
+      } */
+
+      /* Slight pop for cards/images */
+      .box-card, .img, .cert-right img {
+        transform-origin: center;
+        transition: transform 400ms ease, box-shadow 300ms ease;
+      }
+      .box-card:hover, .img:hover, .cert-right img:hover{
+        transform: translateY(-6px) scale(1.01);
+        box-shadow: 0 10px 30px rgba(16,24,40,0.12);
+      }
+    </style>
+
+    <script>
+    (function(){
+      // Add reveal class to sensible elements
+      const selectors = [
+        '.Section01 > .left, .Section01 > .right',
+        '.section',
+        '.box-card',
+        '.skills-container .sub-sec',
+        '.professional-aboutme',
+        '.pro-footer a',
+        '.cert-container',
+        '.personal-content',
+        '.pro-container'
+      ];
+      const elements = Array.from(document.querySelectorAll(selectors.join(',')));
+      elements.forEach(el => el.classList.add('reveal'));
+
+      // IntersectionObserver to toggle visible class
+      const supportsIO = 'IntersectionObserver' in window;
+      if(!supportsIO){
+        elements.forEach(e => e.classList.add('visible'));
+        return;
+      }
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      elements.forEach(el => io.observe(el));
+
+      // Gentle stagger for visible reveals already in viewport on load
+      window.addEventListener('load', () => {
+        const inView = elements.filter(el => el.getBoundingClientRect().top < window.innerHeight);
+        inView.forEach((el, i) => {
+          el.style.transitionDelay = (i * 60) + 'ms';
+        });
+      });
+    })();
+    </script>
+
+    <!-- <div id="lock">
+      <h1>please bro Rotate the Device 😭</h1>
     </div> -->
 
-  <div class="personalPort" id="container">
-    <div class="Section01">
-      <div class="right">
-        <img src="./images/IMG_6543.JPG
-        " alt="" class="img" />
-      </div>
-      <div class="left">
-        <h1>Hello World</h1>
-        <h2 class="name">I'm Lokesh Matta</h2>
-        <div class="socials-nav">
-          <p class="v-count">Visitor Count : <span class="v-num">69</span></p>
-          <a href="/files/Lokesh_Matta_Resume.pdf" download="Resume">Resume 📜</a>
-          <ul>
-            <li>
-              <a href="https://www.linkedin.com/in/iaml0kesh/">
-                <img src="images/logos/Linkedin.png" alt="Open Linkedin Profile" />
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/iaml0kesh">
-                <img src="images/logos/x.png" alt="Open X Profile" />
-              </a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/iaml0kesh/">
-                <img src="images/logos/instagram.png" alt="Open Instagram Profile" />
-              </a>
-            </li>
-          </ul>
+    <div class="personalPort" id="container">
+      <div class="Section01">
+        <div class="right">
+          <img
+            src="./images/IMG_6543.JPG
+        "
+            alt=""
+            class="img"
+          />
         </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <h1 class="section-heading">About Me</h1>
-
-      <div class="choice-container">
-        <img src="images/Assets/pill.png" alt="Morpheus with hands extended" class="morpheus-img" />
-
-        <!-- Buttons -->
-        <button id="pillBlue" class="pill-button professional" onclick="showContent('professional')">
-          Professional
-        </button>
-        <button id="pillRed" class="pill-button personal" onclick="showContent('personal')">
-          Personal
-        </button>
-      </div>
-
-    </div>
-
-    <!-- Two Sectons Professinal and Personal -->
-
-    <div class="professional-content">
-      <h1 class="section-heading">Professinal ME 👨‍💻</h1>
-      <div class="section">
-        <div class="professional-abtme-container">
-
-          <!--Professional About Me -->
-
-          <h2 class="sub-heading">Design | Code | Debug</h2>
-          <p class="professional-aboutme">
-            Hey, I'm Lokesh, and I'm from the Indian city of Vijayawada. In
-            sixth grade, I had my first encounter with a computer, and it marked
-            the beginning of my aspiration to pursue a career in the field of
-            computing. Subsequently, I am pursuing a B.Tech degree in Computer
-            Science and Engineering (CSE) and have immersed myself in the world
-            of programming. <br /><br />
-            I've dedicated countless days and nights to mastering Data
-            Structures and Algorithms (DSA) concepts, though I believe
-            continuous practice is essential for improvement. <br /><br />
-            My journey expanded into web development, where I dived into HTML
-            and CSS. Then, I encountered the challenging subject of JavaScript,
-            which, despite its difficulties 🥲, I managed to grasp the
-            fundamentals. Fortunately, I embarked on the path of using the React
-            Library to craft web and native UI experiences. <br /><br />
-            Finally, given the opportunity, I would like to use all of my skill
-            sets and knowledge to design, code, and debug some impressive
-            projects.
-          </p>
-        </div>
-      </div>
-
-      <div class="section">
-        <h1 class="section-heading">Skills</h1>
-        <div class="skills-container">
-          <div class="sub-sec">
-            <h1>Languages and Databases</h1>
-            <ul>
-              <li>
-                <img src="images/Skills/Java.png" alt="" />
-                <p>Java</p>
-              </li>
-              <li>
-                <img src="images/Skills/Javascript.png" alt="" />
-                <p>JavaScript</p>
-              </li>
-              <li>
-                <img src="images/Skills/Mongodb.png" alt="" />
-                <p>MongoDB</p>
-              </li>
-            </ul>
-          </div>
-          <div class="sub-sec">
-            <h1>Frameworks</h1>
-            <ul>
-              <li>
-                <img src="images/Skills/React.png" alt="" />
-                <p>React</p>
-              </li>
-              <li>
-                <img src="images/Skills/Nodejs.png" alt="" />
-                <p>Node JS</p>
-              </li>
-            </ul>
-          </div>
-          <div class="sub-sec">
-            <h1>Tools</h1>
-            <ul>
-              <li>
-                <img src="images/Skills/Figma.png" alt="" />
-                <p>Figma</p>
-              </li>
-
-              <li>
-                <img src="images/Skills/GIT.png" alt="" />
-                <p>GIT</p>
-              </li>
-            </ul>
-          </div>
-          <div class="sub-sec">
-            <h1>Cloud</h1>
-            <ul>
-              <li>
-                <img src="images/Skills/AWS.png" alt="" />
-                <p>AWS</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Projects -->
-
-      <div class="section">
-        <h2 class="section-heading">Projects</h2>
-        <div class="pro-container">
-          <div class="box-card">
-            <img src="images/Projects/ShareYourNotes.png" alt="" />
-            <p class="pro-title">Share Your Notes</p>
-            <p class="pro-info">
-              Developed a full-stack web application using the MERN stack. Users
-              can view, create, modify, and remove notes. To ensure secure
-              access, we included user authentication and authorization
-              mechanisms. MongoDB was used for database storage, with Express JS
-              serving as the backend API. created the frontend using React.
+        <div class="left">
+          <h1>Hello World</h1>
+          <h2 class="name">I'm Lokesh Matta</h2>
+          <div class="socials-nav">
+            <p class="v-count">
+              Visitor Count : &nbsp;<span class="v-num">69</span>
             </p>
-            <div class="pro-footer">
-              <a href="">Github</a>
-              <p>2023</p>
+            <a href="/Sections/Lokesh_Matta_Resume.html"> Resume </a>
+            <ul>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/iaml0kesh/"
+                  target="_blank"
+                >
+                  <img
+                    src="images/logos/Linkedin.png"
+                    alt="Open Linkedin Profile"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="https://x.com/iaml0kesh target="_blank">
+                  <img src="images/logos/x.png" alt="Open X Profile" />
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/iaml0kesh/" target="_blank">
+                  <img
+                    src="images/logos/instagram.png"
+                    alt="Open Instagram Profile"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h1 class="section-heading">About Me</h1>
+
+        <div class="choice-container">
+          <img
+            src="images/Assets/pill.png"
+            alt="Morpheus with hands extended"
+            class="morpheus-img"
+          />
+
+          <!-- Buttons -->
+          <button
+            id="pillBlue"
+            class="pill-button professional"
+            onclick="showContent('professional')"
+          >
+            Professional
+          </button>
+          <button
+            id="pillRed"
+            class="pill-button personal"
+            onclick="showContent('personal')"
+          >
+            Personal
+          </button>
+        </div>
+      </div>
+
+      <!-- Two Sectons Professinal and Personal -->
+
+      <div class="professional-content">
+        <div class="section">
+          <h1 class="section-heading" id="head-professional">
+            Professional ME 👨‍💻
+          </h1>
+          <div class="professional-abtme-container">
+            <!--Professional About Me -->
+
+            <h2 class="sub-heading">Design | Code | Debug</h2>
+            <p class="professional-aboutme">
+              Hey, I'm Lokesh, and I'm from the Indian city of Vijayawada. In
+              sixth grade, I had my first encounter with a computer, and it
+              marked the beginning of my aspiration to pursue a career in the
+              field of computing. Subsequently, I am pursuing a B.Tech degree in
+              Computer Science and Engineering (CSE) and have immersed myself in
+              the world of programming. <br /><br />
+              I've dedicated countless days and nights to mastering Data
+              Structures and Algorithms (DSA) concepts, though I believe
+              continuous practice is essential for improvement. <br /><br />
+              My journey expanded into web development, where I dived into HTML
+              and CSS. Then, I encountered the challenging subject of
+              JavaScript, which, despite its difficulties 🥲, I managed to grasp
+              the fundamentals. Fortunately, I embarked on the path of using the
+              React Library to craft web and native UI experiences. <br /><br />
+              Finally, given the opportunity, I would like to use all of my
+              skill sets and knowledge to design, code, and debug some
+              impressive projects.
+            </p>
+          </div>
+        </div>
+
+        <div class="section">
+          <h1 class="section-heading">Skills</h1>
+          <div class="skills-container">
+            <div class="sub-sec">
+              <h1>Languages and Databases</h1>
+              <ul>
+                <li>
+                  <img src="images/Skills/Java.png" alt="" />
+                  <p>Java</p>
+                </li>
+                <li>
+                  <img src="images/Skills/Javascript.png" alt="" />
+                  <p>JavaScript</p>
+                </li>
+                <li>
+                  <img src="images/Skills/Mongodb.png" alt="" />
+                  <p>MongoDB</p>
+                </li>
+              </ul>
             </div>
-          </div>
-          <div class="box-card">
-            <img src="images/Projects/paintBox.png" alt="" />
-            <p class="pro-title">Paint The Card</p>
-            <p class="pro-info">
-              Created a web-based game with HTML, CSS, and JavaScript. The user
-              can select a color from the available options and paint the cards
-              as desired and Implemented a feature that allows the cards to be
-              colored randomly with a single click. Pushed to Github and
-              Deployed using Github Pages
-            </p>
-            <div class="pro-footer">
-              <a href="">Github</a>
-              <p>2023</p>
+            <div class="sub-sec">
+              <h1>Frameworks</h1>
+              <ul>
+                <li>
+                  <img src="images/Skills/React.png" alt="" />
+                  <p>React</p>
+                </li>
+                <li>
+                  <img src="images/Skills/Nodejs.png" alt="" />
+                  <p>Node JS</p>
+                </li>
+              </ul>
+            </div>
+            <div class="sub-sec">
+              <h1>Tools</h1>
+              <ul>
+                <li>
+                  <img src="images/Skills/Figma.png" alt="" />
+                  <p>Figma</p>
+                </li>
+
+                <li>
+                  <img src="images/Skills/GIT.png" alt="" />
+                  <p>GIT</p>
+                </li>
+              </ul>
+            </div>
+            <div class="sub-sec">
+              <h1>Cloud</h1>
+              <ul>
+                <li>
+                  <img src="images/Skills/AWS.png" alt="" />
+                  <p>AWS</p>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Certifications -->
+        <!-- Projects -->
 
-      <div class="section">
-        <h2 class="section-heading">Certifications</h2>
-        <div class="cert-container">
-          <div class="cert-left">
-            <p class="cert-title">AWS Certified Cloud Practitioner</p>
-            <p class="cert-info">
-              I successfully completed the AWS Certified Cloud Practitioner
-              certification during my summer break in 2022. This certification
-              has equipped me with foundational knowledge of the AWS Cloud
-              platform and its services.
-            </p>
-            <h4>Key Learnings:</h4>
-            <ul class="key-learning-list"></ul>
-            <div class="cert-nav">
-              <button id="prevC">Prev</button>
-              <button id="nextC">Next</button>
+        <div class="section">
+          <h2 class="section-heading">Projects</h2>
+          <div class="pro-container">
+            <div class="box-card">
+              <img src="images/Projects/ShareYourNotes.png" alt="" />
+              <p class="pro-title">Share Your Notes</p>
+              <p class="pro-info">
+                Developed a full-stack web application using the MERN stack.
+                Users can view, create, modify, and remove notes. To ensure
+                secure access, we included user authentication and authorization
+                mechanisms. MongoDB was used for database storage, with Express
+                JS serving as the backend API. created the frontend using React.
+              </p>
+              <div class="pro-footer">
+                <a href="">Github</a>
+                <p>2023</p>
+              </div>
+            </div>
+            <div class="box-card">
+              <img src="images/Projects/paintBox.png" alt="" />
+              <p class="pro-title">Paint The Card</p>
+              <p class="pro-info">
+                Created a web-based game with HTML, CSS, and JavaScript. The
+                user can select a color from the available options and paint the
+                cards as desired and Implemented a feature that allows the cards
+                to be colored randomly with a single click. Pushed to Github and
+                Deployed using Github Pages
+              </p>
+              <div class="pro-footer">
+                <a href="">Github</a>
+                <p>2023</p>
+              </div>
             </div>
           </div>
-          <div class="cert-right">
-            <img src="images/Certificates/AWSCP.png" alt="" id="cert-img" />
+        </div>
+
+        <!-- Certifications -->
+
+        <div class="section">
+          <h2 class="section-heading">Certifications</h2>
+          <div class="cert-container">
+            <div class="cert-left">
+              <p class="cert-title">AWS Certified Cloud Practitioner</p>
+              <p class="cert-info">
+                I successfully completed the AWS Certified Cloud Practitioner
+                certification during my summer break in 2022. This certification
+                has equipped me with foundational knowledge of the AWS Cloud
+                platform and its services.
+              </p>
+              <h4>Key Learnings:</h4>
+              <ul class="key-learning-list"></ul>
+              <div class="cert-nav">
+                <button id="prevC">Prev</button>
+                <button id="nextC">Next</button>
+              </div>
+            </div>
+            <div class="cert-right">
+              <img src="images/Certificates/AWSCP.png" alt="" id="cert-img" />
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Education -->
+        <!-- Education -->
 
-      <!-- <div class="section">
+        <!-- <div class="section">
             <h2 class="section-heading">Education</h2>
             <div class="edu-container">
               <div class="educard">
@@ -285,49 +435,50 @@
               </div>
             </div>
           </div> -->
-    </div>
-
-    <div class="personal-content">
-      <h1 class="section-heading" id="head-personal">Personal ME 😎</h1>
-      <div class="section">
-        <div class="professional-abtme-container">
-
-          <!-- Personal About Me -->
-          <h2 class="sub-heading">Explore | Watch | Laugh</h2>
-          <p class="professional-aboutme">
-            When I'm not busy debugging code 👨‍💻, you’ll probably find me deep into a movie/Tv show session 🎞️, gaming session 🎮, or scrolling through memes 😂 that are way too
-            relatable.
-            <br><br>
-            I’m a huge fan of movies and TV shows — from epic sci-fi to emotional dramas, if it can make me laugh, cry,
-            or overthink my existence at 2 AM, I’m in 😤. Gaming is my escape room, stress buster, and sometimes, my reason
-            for forgetting what day it is. <br><br>
-
-            Traveling and photography 📷 keep me grounded — literally and creatively. I love discovering new places, even
-            if it's just for the food or that one perfect sunset shot I’ll post a week later with a deep caption 😌. <br><br>
-
-            Tech gadgets make me feel like a kid in a digital candy store. Memes? They're my daily dose of serotonin.
-            And music? If I had a rupee for every time a song fixed my mood, I could probably buy a concert ticket... or
-            at least better headphones. <br><br>
-
-            TL;DR: I code to pay the bills, but I vibe with life through pixels, playlists, and plot twists.
-          </p>
-        </div>
       </div>
 
-      <div class="section">
-        <div class="">
+      <!-- Personal Side -->
 
+      <div class="personal-content">
+        <div class="section">
+          <h1 class="section-heading" id="head-personal">Personal ME 😎</h1>
+          <div class="professional-abtme-container">
+            <!-- Personal About Me -->
+            <h2 class="sub-heading">Explore | Watch | Laugh</h2>
+            <p class="professional-aboutme">
+              When I'm not busy debugging code 👨‍💻, you’ll probably find me deep
+              into a movie/Tv show session 🎞️, gaming session 🎮, or scrolling
+              through memes 😂 that are way too relatable.
+              <br /><br />
+              I’m a huge fan of movies and TV shows — from epic sci-fi to
+              emotional dramas, if it can make me laugh, cry, or overthink my
+              existence at 2 AM, I’m in 😤. Gaming is my escape room, stress
+              buster, and sometimes, my reason for forgetting what day it is.
+              <br /><br />
+
+              Traveling and photography 📷 keep me grounded — literally and
+              creatively. I love discovering new places, even if it's just for
+              the food or that one perfect sunset shot I’ll post a week later
+              with a deep caption 😌. <br /><br />
+
+              Tech gadgets make me feel like a kid in a digital candy store.
+              Memes? They're my daily dose of serotonin. And music? If I had a
+              rupee for every time a song fixed my mood, I could probably buy a
+              concert ticket... or at least better headphones. <br /><br />
+
+              TL;DR: I code to pay the bills, but I vibe with life through
+              pixels, playlists, and plot twists.
+            </p>
+          </div>
         </div>
-        <h1 class="section-heading">Movies</h1>
+
+        <div class="section">
+          <div class=""></div>
+          <h1 class="section-heading">Movies</h1>
+        </div>
       </div>
     </div>
-  </div>
 
-
-
-  <!-- Personal Side -->
-
-  <script src="index.js"></script>
-</body>
-
+    <script src="index.js"></script>
+  </body>
 </html>
