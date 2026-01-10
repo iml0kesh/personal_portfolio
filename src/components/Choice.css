@@ -1,0 +1,43 @@
+.choice-container {
+  /* border: 1px solid red; */
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.morpheus-img {
+  /* border: 1px solid red; */
+  width: 43%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Button styles */
+.pill-button {
+  position: absolute;
+  padding: 12px 15px;
+  font-size: 15px;
+  width: 110px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.2s ease;
+}
+
+.pill-button.professional {
+  background-color: #1e90ff; /* Blue */
+  left: 35.3%;
+  top: 65%;
+}
+
+.pill-button.personal {
+  background-color: #e60026; /* Red */
+  right: 35.8%; /* Adjust based on hand position */
+  top: 65%;
+}
+
+.pill-button:hover {
+  transform: scale(1.5);
+}
