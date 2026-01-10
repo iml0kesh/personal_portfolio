@@ -4,6 +4,21 @@ import { Choice } from "./Choice";
 export const Homepage = () => {
   return (
     <>
+      <div
+        style={{
+          padding: "1rem",
+          backgroundColor: "#fff3cd",
+          border: "1px solid #ffc107",
+          borderRadius: "4px",
+          margin: "1rem",
+        }}
+      >
+        <p style={{ margin: 0, color: "#856404" }}>
+          <strong>⚠️ Notice:</strong> We're migrating this site from standard
+          HTML to React in January 2026. Please expect some glitches and errors.
+          Thank you for your patience!
+        </p>
+      </div>
       <div class="personalPort" id="container">
         <div class="Section01">
           <div class="right">
