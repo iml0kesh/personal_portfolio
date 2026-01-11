@@ -41,3 +41,25 @@
 .pill-button:hover {
   transform: scale(1.5);
 }
+
+@media screen and (max-width: 480px) {
+  .morpheus-img {
+    width: 70%;
+  }
+  .pill-button {
+    position: absolute;
+    padding: 10px 0px;
+    font-size: 15px;
+    width: 100px;
+    border-radius: 30px;
+  }
+  .pill-button.professional {
+    left: 20%;
+    top: 65%;
+  }
+
+  .pill-button.personal {
+    right: 20%; /* Adjust based on hand position */
+    top: 65%;
+  }
+}

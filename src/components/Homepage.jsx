@@ -28,40 +28,50 @@ export const Homepage = () => {
           <div class="left">
             <h1>Hello World</h1>
             <h2 class="name">I'm Lokesh Matta</h2>
-            <div class="socials-nav">
-              <p class="v-count">
+            <div class="info">
+
+              <div className="socials-nav">
+                <a
+                  href="https://github.com/iml0kesh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-btn"
+                >
+                  <img src="images/logos/github.png" alt="GitHub Logo" />
+                  Github
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/iaml0kesh/"
+                  target="_blank"
+                  className="social-btn"
+                >
+                  <img src="images/logos/Linkedin.png" alt="Linkedin" />
+                  Linkedin
+                </a>
+
+                <a
+                  href="https://x.com/iaml0kesh"
+                  target="_blank"
+                  className="social-btn"
+                >
+                  <img src="images/logos/x.png" alt="Linkedin" />
+                  Twitter
+                </a>
+
+                <a
+                  href="https://instagram.com/iaml0kesh"
+                  target="_blank"
+                  className="social-btn"
+                >
+                  <img src="images/logos/instagram.png" alt="Instagram" />
+                  Instagram
+                </a>
+              </div>
+
+              {/* <p class="v-count">
                 Visitor Count : &nbsp;<span class="v-num">69</span>
-              </p>
-              <a href="/Sections/Lokesh_Matta_Resume.html"> Resume </a>
-              <ul>
-                <li>
-                  <a
-                    href="https://www.linkedin.com/in/iaml0kesh/"
-                    target="_blank"
-                  >
-                    <img
-                      src="images/logos/Linkedin.png"
-                      alt="Open Linkedin Profile"
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a href="https://x.com/iaml0kesh" target="_blank">
-                    <img src="images/logos/x.png" alt="Open X Profile" />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.instagram.com/iaml0kesh/"
-                    target="_blank"
-                  >
-                    <img
-                      src="images/logos/instagram.png"
-                      alt="Open Instagram Profile"
-                    />
-                  </a>
-                </li>
-              </ul>
+              </p> */}
             </div>
           </div>
         </div>

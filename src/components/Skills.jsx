@@ -4,7 +4,7 @@ export const Skills = () => {
   return (
     <>
       <div className="section">
-        <h1 class="section-heading">Skills</h1>
+        <h1 class="section-heading">Tech Stack</h1>
         <div class="skills-container">
           <div class="sub-sec">
             <h1>Languages and Databases</h1>
