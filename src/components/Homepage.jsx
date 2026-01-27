@@ -1,10 +1,11 @@
 import React from "react";
 import { Choice } from "./Choice";
+import { ToggleChoice } from "./ToggleChoice";
 
 export const Homepage = () => {
   return (
     <>
-      <div
+      {/* <div
         style={{
           padding: "1rem",
           backgroundColor: "#fff3cd",
@@ -18,7 +19,7 @@ export const Homepage = () => {
           to React in January 2026. Please expect some glitches and errors.
           Thank you for your patience!
         </p>
-      </div>
+      </div> */}
 
       <div class="personalPort" id="container">
         <div class="Section01">
@@ -29,7 +30,6 @@ export const Homepage = () => {
             <h1>Hello World</h1>
             <h2 class="name">I'm Lokesh Matta</h2>
             <div class="info">
-
               <div className="socials-nav">
                 <a
                   href="https://github.com/iml0kesh"
@@ -76,7 +76,8 @@ export const Homepage = () => {
           </div>
         </div>
       </div>
-      <Choice />
+      {/* <Choice /> */}
+      <ToggleChoice />
     </>
   );
 };

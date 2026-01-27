@@ -1,0 +1,55 @@
+.ToggleChoice {
+  /* border: 1px solid red; */
+  /* max-width: 1280px; */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.segmented {
+  /* border: 1px solid red; */
+  position: relative;
+  width: 320px;
+  height: 48px;
+  background: #1a1a1a;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.segmented button {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: #aaa;
+  font-size: 15px;
+  cursor: pointer;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+.segmented button.active {
+  color: #000;
+  font-weight: 600;
+}
+
+.indicator {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 999px;
+  left: 0;
+  transition: transform 0.65s ease;
+}
+
+.view {
+  display: none;
+}
+
+.view.active {
+  display: block;
+}

@@ -160,7 +160,11 @@ body {
   font-weight: 500;
   margin: 10px;
   text-align: center;
-  text-shadow: 0 0 5px #fff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #0ff,
+    0 0 20px #0ff,
+    0 0 40px #0ff;
 }
 
 @media screen and (max-width: 480px) {
