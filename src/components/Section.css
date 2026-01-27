@@ -1,11 +1,14 @@
 .section {
-  /* border: 1px solid red; */
+  /* border: 1px solid rgb(255, 255, 255); */
+  /* border-radius: 25px; */
   text-align: center;
   /* padding: 0% 10% 0% 10%; */
+  /* background-color: #171410; */
 }
 
 .section-heading {
   /* border: 1px solid red; */
+  margin: 0px;
   padding-bottom: 20px;
   border-bottom: 1px solid rgb(77, 73, 73);
   width: 100%;

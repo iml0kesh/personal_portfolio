@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Professional } from "./Professional";
+import { Personal } from "./Personal";
 
 export const ToggleChoice = () => {
   const [selected, setSelected] = useState(0);
@@ -27,8 +28,10 @@ export const ToggleChoice = () => {
         </button>
       </div>
 
-      {selected === 0 && <Professional />}
-      {selected === 1 && <Professional />}
+      <div className="content-box">
+        {selected === 0 && <Professional />}
+        {selected === 1 && <Personal />}
+      </div>
     </div>
   );
 };

@@ -1,7 +1,6 @@
 .cert-container {
   background-color: #1a1b1b;
   border-radius: 5px;
-
   display: flex;
   padding: 20px;
   /* border: 1px solid white; */
@@ -11,7 +10,7 @@
   width: 100%;
   /* border: 1px solid red; */
   text-align: justify;
-  padding: 2%;
+  /* padding: 2%; */
   position: relative;
 }
 
@@ -50,9 +49,9 @@
 .cert-nav {
   width: 100%;
   /* border: 1px solid red; */
-  position: absolute;
-  bottom: 1.3rem;
-  left: 1.3rem;
+  /* position: absolute; */
+  /* bottom: 1.3rem;
+  left: 1.3rem; */
 }
 
 .cert-nav button {
