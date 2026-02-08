@@ -54,6 +54,13 @@
   border-radius: 10px;
 }
 
+
+/* Slider */
+
+.slider {
+
+}
+
 @media (max-width: 600px) {
   .pro-container {
     flex-direction: column;
