@@ -53,8 +53,8 @@ export const Projects = () => {
   return (
     <>
       <div class="section">
-        <h2 class="section-heading">Projects</h2>
         <div class="pro-container">
+          <h2 class="section-heading">Projects</h2>
           {visibleProjects.map((project) => (
             <div class="box-card">
               <img src={project.img} alt="" />

@@ -7,16 +7,19 @@
 }
 
 .box-card {
+  /* border: 1px solid red; */
   background-color: #1a1b1b;
   border-radius: 10px;
   padding: 16px;
   /* padding-bottom: 30px; */
-  width: calc(50% - 20px);
+  width: 50px;
   box-sizing: border-box;
   flex-grow: 1;
 }
 
 .pro-title {
+  /* border: 1px solid red; */
+
   font-weight: 500;
   font-size: 22px;
   color: #ffbd39;
@@ -28,6 +31,7 @@
   text-align: justify;
   font-size: 16px;
   color: white;
+  height: 180px;
   /* background-color: white; */
 }
 

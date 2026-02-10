@@ -3,9 +3,9 @@ export const Personal = () => {
     <>
       <div class="professional-content">
         <div class="section">
-          <h1 class="section-heading" id="head-professional">
+          {/* <h1 class="section-heading" id="head-professional">
             Personal ME 👨‍💻
-          </h1>
+          </h1> */}
           <div class="professional-abtme-container">
             <h2 class="sub-heading">Design | Code | Debug</h2>
             <p class="professional-aboutme">
