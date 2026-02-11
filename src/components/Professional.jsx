@@ -9,9 +9,6 @@ export const Professional = () => {
       <div class="professional-content">
         <div class="section">
           <div class="professional-abtme-container">
-            {/* <h1 class="section-heading" id="head-professional">
-              Professional ME 👨‍💻
-            </h1> */}
             <h2 class="sub-heading">Design | Code | Debug</h2>
             <p class="professional-aboutme">
               Hi, I’m a software engineer based in India. I enjoy building,

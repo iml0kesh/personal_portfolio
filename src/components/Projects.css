@@ -1,21 +1,22 @@
 .pro-container {
   display: flex;
-  /* border: 1px solid white; */
   gap: 20px;
   flex-wrap: wrap;
   padding-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
+
 .box-card {
-  /* border: 1px solid red; */
   background-color: #1a1b1b;
   border-radius: 10px;
   padding: 16px;
-  /* padding-bottom: 30px; */
-  width: 50px;
+  flex: 1 1 300px;   /* flexible card */
+  max-width: 100%;
   box-sizing: border-box;
-  flex-grow: 1;
 }
+
 
 .pro-title {
   /* border: 1px solid red; */

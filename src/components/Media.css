@@ -1,0 +1,100 @@
+.media-content {
+  position: relative;
+  width: 100%;
+  max-width: 850px;
+  /* border: 1px solid red; */
+}
+
+.media-row {
+  /* padding: 0% 1% 0% 1%; */
+}
+
+.media-row h3 {
+  text-align: left;
+  font-family: "Lora", "Noto Sans SC";
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #aea12c;
+  /* margin-left: 5px; */
+}
+
+.media-cards {
+  display: flex;
+  gap: 10px;
+  /* overflow-x: auto; */
+  overflow-y: hidden;
+  width: 100%;
+  padding-top: 10px;
+}
+
+/* .media-cards::-webkit-scrollbar {
+  display: none; 
+} */
+
+/* .media-cards-wrapper {
+  width: 100%;
+  overflow: hidden;
+} */
+
+.media-card {
+  width: 90px;
+  min-width: 90px;
+  max-width: 90px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: start;
+}
+
+.media-card img {
+  width: 90px;
+  height: 135px;
+  object-fit: cover;
+  border-radius: 4px;
+  transition: all 0.4s ease;
+  display: block;
+  background-color: #2a2a2a;
+}
+
+.media-card:hover img {
+  transform: translateY(-5px);
+}
+
+.media-card p {
+  width: 100%;
+  font-family: "Outfit", "Noto Sans SC";
+  font-size: 0.8rem;
+  margin-top: 8px;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+/* .media-card:hover::after {
+  opacity: 1;
+} */
+
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
