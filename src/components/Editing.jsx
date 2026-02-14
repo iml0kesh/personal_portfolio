@@ -25,14 +25,13 @@ export const Editing = () => {
     setCurrent(newIndex);
   };
 
-  // We add 1 to the length to account for the Instagram card
   const totalSlides = photos.length + 1;
 
   return (
     <section className="editing-playground">
-      {/* --- VIDEO SECTION --- */}
+
       <div className="section-title">
-        <h2>🎬 MOTION EDITS</h2>
+        <h2>Video EDITS</h2>
       </div>
 
       <div className="video-viewport">
@@ -89,9 +88,9 @@ export const Editing = () => {
         </button>
       </div>
 
-      {/* --- PHOTO SLIDER SECTION --- */}
+      
       <div className="section-title" style={{ marginTop: "4rem" }}>
-        <h2>📸 STATIC EDITS</h2>
+        <h2>Clicks</h2>
       </div>
 
       <div className="photo-slider-container">
@@ -100,21 +99,21 @@ export const Editing = () => {
           animate={{ x: `-${photoCurrent * 100}%` }}
           transition={{ duration: 0.8, ease: [0.77, 0, 0.175, 1] }}
         >
-          {/* Render Actual Photos */}
+         
           {photos.map((src, index) => (
             <div key={index} className="photo-slide">
               <img src={src} alt={`Edit ${index}`} />
             </div>
           ))}
 
-          {/* Render Instagram CTA Card */}
+          
           <div className="photo-slide instagram-card">
             <div className="insta-content">
               <div className="insta-icon">📸</div>
               <h3>See more on Instagram</h3>
               <p>Check out my latest raw cuts and daily edits.</p>
               <a
-                href="https://instagram.com/your-username"
+                href="https://instagram.com/iaml0kesh"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="insta-btn"
