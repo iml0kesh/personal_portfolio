@@ -1,3 +1,4 @@
+import { Editing } from "./Editing";
 import { Media } from "./Media";
 
 export const Personal = () => {
@@ -16,7 +17,7 @@ export const Personal = () => {
             </p>
           </div>
         </div>
-
+        <Editing />
         <Media />
       </div>
     </>

@@ -61,6 +61,7 @@ export const Homepage = () => {
         </div>
       </div>
       {/* <Choice /> */}
+      <div id="static-binary-grid" aria-hidden="true"></div>
       <ToggleChoice />
     </>
   );
