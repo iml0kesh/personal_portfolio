@@ -4,7 +4,7 @@
   padding: 40px 20px;
   /* background: #0a0a0a; */
   color: white;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .section-title h2 {
@@ -24,7 +24,7 @@
   border-radius: 16px;
   overflow: hidden;
   margin-bottom: 20px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
 .video-layer {
@@ -72,28 +72,145 @@
 }
 
 /* PHOTO STRIP */
-.photo-strip {
-  display: flex;
-  gap: 15px;
-  overflow-x: auto;
-  padding-bottom: 20px;
-  scrollbar-width: none; /* Hide scrollbar for clean look */
-}
-
-.photo-strip::-webkit-scrollbar {
-  display: none;
-}
-
-.strip-item {
-  flex: 0 0 260px;
-  height: 350px;
-  border-radius: 12px;
+.photo-slider-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3; /* Good balance for vertical and horizontal photos */
+  max-width: 600px; /* Kept it centered and clean */
+  margin: 0 auto;
   overflow: hidden;
+  border-radius: 20px;
   background: #111;
-  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
 }
 
-.strip-item img {
+.photo-slider-track {
+  display: flex;
+  height: 100%;
+  /* width: 100%; */
+}
+
+.photo-slide {
+  flex: 0 0 100%;
+  height: 100%;
+}
+
+.photo-slide img {
+  /* width: 100%; */
+  height: 100%;
+  object-fit: cover;
+}
+
+/* FLOATING NAV BUTTONS */
+.photo-nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  pointer-events: none; /* Allows clicking through to the slider if needed */
+}
+
+.round-btn {
+  pointer-events: auto;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+
+.round-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* DOTS */
+.dots-container {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dot.active {
+  background: #fff;
+  width: 24px;
+  border-radius: 10px;
+}
+
+
+.instagram-card {
+  background: linear-gradient(45deg, #121212, #1a1a1a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.insta-content {
+  padding: 20px;
+}
+
+.insta-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.insta-content h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.insta-content p {
+  opacity: 0.6;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.insta-btn {
+  display: inline-block;
+  background: #fff;
+  color: #000;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.insta-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(255,255,255,0.1);
+}
+
+/* Ensure images don't look weird in 16:9 */
+.photo-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;

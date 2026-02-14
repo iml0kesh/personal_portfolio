@@ -5,6 +5,7 @@ import "./Editing.css";
 export const Editing = () => {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [photoCurrent, setPhotoCurrent] = useState(0);
 
   const videos = [
     "GSyi7ze4EW0?si=-2MmdACJeIk6Qz4Y",
@@ -13,10 +14,10 @@ export const Editing = () => {
   ];
 
   const photos = [
+    "images/EditingPhotos/e0.jpg",
     "images/EditingPhotos/e1.JPG",
-    "https://images.unsplash.com/photo-1492691523567-61723c275df1?q=80&w=1000",
-    "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1000",
-    "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=1000",
+    "images/EditingPhotos/e2.jpg",
+    "images/EditingPhotos/e3.jpg",
   ];
 
   const changeVideo = (newIndex) => {
@@ -24,32 +25,12 @@ export const Editing = () => {
     setCurrent(newIndex);
   };
 
-  // RESTORED: Cinematic Wipe Animations
-  const videoVariants = {
-    enter: (direction) => ({
-      clipPath: direction > 0 ? "inset(0 0 0 100%)" : "inset(0 100% 0 0)",
-      scale: 1.2,
-      opacity: 0,
-    }),
-    center: {
-      clipPath: "inset(0 0 0 0%)",
-      scale: 1,
-      opacity: 1,
-      transition: {
-        clipPath: { duration: 0.8, ease: [0.77, 0, 0.175, 1] },
-        scale: { duration: 0.9, ease: "easeOut" },
-      },
-    },
-    exit: (direction) => ({
-      clipPath: direction < 0 ? "inset(0 0 0 100%)" : "inset(0 100% 0 0)",
-      scale: 0.9,
-      opacity: 0,
-      transition: { duration: 0.8, ease: [0.77, 0, 0.175, 1] },
-    }),
-  };
+  // We add 1 to the length to account for the Instagram card
+  const totalSlides = photos.length + 1;
 
   return (
     <section className="editing-playground">
+      {/* --- VIDEO SECTION --- */}
       <div className="section-title">
         <h2>🎬 MOTION EDITS</h2>
       </div>
@@ -59,14 +40,28 @@ export const Editing = () => {
           <motion.div
             key={current}
             custom={direction}
-            variants={videoVariants}
+            variants={{
+              enter: (d) => ({
+                clipPath: d > 0 ? "inset(0 0 0 100%)" : "inset(0 100% 0 0)",
+                scale: 1.2,
+              }),
+              center: {
+                clipPath: "inset(0 0 0 0%)",
+                scale: 1,
+                transition: { duration: 0.8, ease: [0.77, 0, 0.175, 1] },
+              },
+              exit: (d) => ({
+                clipPath: d < 0 ? "inset(0 0 0 100%)" : "inset(0 100% 0 0)",
+                scale: 0.9,
+              }),
+            }}
             initial="enter"
             animate="center"
             exit="exit"
             className="video-layer"
           >
             <iframe
-              src={`https://www.youtube.com/embed/${videos[current]}?autoplay=1&mute=1&modestbranding=1`}
+              src={`https://www.youtube.com/embed/${videos[current]}?autoplay=1&mute=1`}
               title="Video"
               allowFullScreen
             />
@@ -94,20 +89,72 @@ export const Editing = () => {
         </button>
       </div>
 
+      {/* --- PHOTO SLIDER SECTION --- */}
       <div className="section-title" style={{ marginTop: "4rem" }}>
         <h2>📸 STATIC EDITS</h2>
       </div>
 
-      <div className="photo-strip">
-        {photos.map((src, index) => (
-          <motion.div
-            key={index}
-            className="strip-item"
-            whileHover={{ scale: 0.98 }}
-            transition={{ duration: 0.3 }}
+      <div className="photo-slider-container">
+        <motion.div
+          className="photo-slider-track"
+          animate={{ x: `-${photoCurrent * 100}%` }}
+          transition={{ duration: 0.8, ease: [0.77, 0, 0.175, 1] }}
+        >
+          {/* Render Actual Photos */}
+          {photos.map((src, index) => (
+            <div key={index} className="photo-slide">
+              <img src={src} alt={`Edit ${index}`} />
+            </div>
+          ))}
+
+          {/* Render Instagram CTA Card */}
+          <div className="photo-slide instagram-card">
+            <div className="insta-content">
+              <div className="insta-icon">📸</div>
+              <h3>See more on Instagram</h3>
+              <p>Check out my latest raw cuts and daily edits.</p>
+              <a
+                href="https://instagram.com/your-username"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="insta-btn"
+              >
+                FOLLOW @iaml0kesh
+              </a>
+            </div>
+          </div>
+        </motion.div>
+
+        <div className="photo-nav">
+          <button
+            onClick={() => setPhotoCurrent((p) => Math.max(0, p - 1))}
+            className="round-btn"
+            style={{ visibility: photoCurrent === 0 ? "hidden" : "visible" }}
           >
-            <img src={src} alt={`Edit ${index}`} />
-          </motion.div>
+            ←
+          </button>
+          <button
+            onClick={() =>
+              setPhotoCurrent((p) => Math.min(totalSlides - 1, p + 1))
+            }
+            className="round-btn"
+            style={{
+              visibility:
+                photoCurrent === totalSlides - 1 ? "hidden" : "visible",
+            }}
+          >
+            →
+          </button>
+        </div>
+      </div>
+
+      <div className="dots-container">
+        {[...Array(totalSlides)].map((_, i) => (
+          <div
+            key={i}
+            className={`dot ${i === photoCurrent ? "active" : ""}`}
+            onClick={() => setPhotoCurrent(i)}
+          />
         ))}
       </div>
     </section>
